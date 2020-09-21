@@ -703,7 +703,7 @@ BerryBlender_EventScript_LinkPlayersArrived: @ 82941C4
 	end
 
 BerryBlender_EventScript_StartDecideLinkLeader: @ 82941ED
-	setvar VAR_0x8004, LINK_GROUP_BERRY_blender
+	setvar VAR_0x8004, LINK_GROUP_BERRY_BLENDER
 	goto BerryBlender_EventScript_DecideLinkLeader
 	end
 

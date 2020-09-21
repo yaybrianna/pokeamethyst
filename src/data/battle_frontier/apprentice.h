@@ -326,7 +326,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
         .facilityClass = FACILITY_CLASS_LASS,
         .species = {SPECIES_SWALOT, SPECIES_XATU, SPECIES_ALTARIA, SPECIES_GOLDUCK, SPECIES_FLYGON, SPECIES_ALAKAZAM, SPECIES_GARDEVOIR, SPECIES_WAILORD, SPECIES_GRUMPIG, SPECIES_MIGHTYENA},
         .id = 3,
-        .speechLost = {EC_WORD_IS, Ec_word_this, EC_WORD_TOO, EC_WORD_MUCH, EC_WORD_QUES, 0xFFFF},
+        .speechLost = {EC_WORD_IS, EC_WORD_THIS, EC_WORD_TOO, EC_WORD_MUCH, EC_WORD_QUES, 0xFFFF},
     },
     {
         .name = {_("ヨウカ"), _("Macy"), _("Amelie"), _("Cleo"), _("Maria"), _("Elisa")},
