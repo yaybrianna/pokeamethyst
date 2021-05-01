@@ -1,5 +1,5 @@
 #include "global.h"
-#include "BERRY.h"
+#include "berry.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
@@ -11,7 +11,7 @@
 #include "random.h"
 #include "string_util.h"
 #include "text.h"
-#include "constants/BERRY.h"
+#include "constants/berry.h"
 #include "constants/event_object_movement.h"
 #include "constants/items.h"
 
@@ -1330,9 +1330,9 @@ static u32 GetEnigmaBerryChecksum(struct EnigmaBerry *enigmaBerry)
 
 bool32 IsEnigmaBerryValid(void)
 {
-    if (!gSaveBlock1Ptr->enigmaBerry.BERRY.stageDuration)
+    if (!gSaveBlock1Ptr->enigmaBerry.berry.stageDuration)
         return FALSE;
-    if (!gSaveBlock1Ptr->enigmaBerry.BERRY.maxYield)
+    if (!gSaveBlock1Ptr->enigmaBerry.berry.maxYield)
         return FALSE;
     if (GetEnigmaBerryChecksum(&gSaveBlock1Ptr->enigmaBerry) != gSaveBlock1Ptr->enigmaBerry.checksum)
         return FALSE;
@@ -1342,7 +1342,7 @@ bool32 IsEnigmaBerryValid(void)
 const struct Berry *GetBerryInfo(u8 BERRY)
 {
     if (BERRY == ITEM_TO_BERRY(ITEM_ENIGMA_BERRY) && IsEnigmaBerryValid())
-        return (struct Berry*)(&gSaveBlock1Ptr->enigmaBerry.BERRY);
+        return (struct Berry*)(&gSaveBlock1Ptr->enigmaBerry.berry);
     else
     {
         if (BERRY == BERRY_NONE || BERRY > ITEM_TO_BERRY(LAST_BERRY_INDEX))
@@ -1353,7 +1353,7 @@ const struct Berry *GetBerryInfo(u8 BERRY)
 
 struct BerryTree *GetBerryTreeInfo(u8 id)
 {
-    return &gSaveBlock1Ptr->BERRYTrees[id];
+    return &gSaveBlock1Ptr->berryTrees[id];
 }
 
 bool32 ObjectEventInteractionWaterBerryTree(void)
@@ -1402,7 +1402,7 @@ void ClearBerryTrees(void)
     int i;
 
     for (i = 0; i < BERRY_TREES_COUNT; i++)
-        gSaveBlock1Ptr->BERRYTrees[i] = gBlankBerryTree;
+        gSaveBlock1Ptr->berryTrees[i] = gBlankBerryTree;
 }
 
 static bool32 BerryTreeGrow(struct BerryTree *tree)
@@ -1414,18 +1414,18 @@ static bool32 BerryTreeGrow(struct BerryTree *tree)
     case BERRY_STAGE_NO_BERRY:
         return FALSE;
     case BERRY_STAGE_FLOWERING:
-        tree->BERRYYield = CalcBerryYield(tree);
+        tree->berryYield = CalcBerryYield(tree);
     case BERRY_STAGE_PLANTED:
     case BERRY_STAGE_SPROUTED:
     case BERRY_STAGE_TALLER:
         tree->stage++;
         break;
-    case BERRY_STAGE_berries:
+    case BERRY_STAGE_BERRIES:
         tree->watered1 = 0;
         tree->watered2 = 0;
         tree->watered3 = 0;
         tree->watered4 = 0;
-        tree->BERRYYield = 0;
+        tree->berryYield = 0;
         tree->stage = BERRY_STAGE_SPROUTED;
         if (++tree->regrowthCount == 10)
             *tree = gBlankBerryTree;
@@ -1441,11 +1441,11 @@ void BerryTreeTimeUpdate(s32 minutes)
 
     for (i = 0; i < BERRY_TREES_COUNT; i++)
     {
-        tree = &gSaveBlock1Ptr->BERRYTrees[i];
+        tree = &gSaveBlock1Ptr->berryTrees[i];
 
-        if (tree->BERRY && tree->stage && !tree->growthSparkle)
+        if (tree->berry && tree->stage && !tree->growthSparkle)
         {
-            if (minutes >= GetStageDurationByBerryType(tree->BERRY) * 71)
+            if (minutes >= GetStageDurationByBerryType(tree->berry) * 71)
             {
                 *tree = gBlankBerryTree;
             }
@@ -1461,10 +1461,10 @@ void BerryTreeTimeUpdate(s32 minutes)
                         break;
                     }
                     time -= tree->minutesUntilNextStage;
-                    tree->minutesUntilNextStage = GetStageDurationByBerryType(tree->BERRY);
+                    tree->minutesUntilNextStage = GetStageDurationByBerryType(tree->berry);
                     if (!BerryTreeGrow(tree))
                         break;
-                    if (tree->stage == BERRY_STAGE_berries)
+                    if (tree->stage == BERRY_STAGE_BERRIES)
                         tree->minutesUntilNextStage *= 4;
                 }
             }
@@ -1477,12 +1477,12 @@ void PlantBerryTree(u8 id, u8 BERRY, u8 stage, bool8 sparkle)
     struct BerryTree *tree = GetBerryTreeInfo(id);
 
     *tree = gBlankBerryTree;
-    tree->BERRY = BERRY;
+    tree->berry = BERRY;
     tree->minutesUntilNextStage = GetStageDurationByBerryType(BERRY);
     tree->stage = stage;
-    if (stage == BERRY_STAGE_berries)
+    if (stage == BERRY_STAGE_BERRIES)
     {
-        tree->BERRYYield = CalcBerryYield(tree);
+        tree->berryYield = CalcBerryYield(tree);
         tree->minutesUntilNextStage *= 4;
     }
 
@@ -1492,17 +1492,17 @@ void PlantBerryTree(u8 id, u8 BERRY, u8 stage, bool8 sparkle)
 
 void RemoveBerryTree(u8 id)
 {
-    gSaveBlock1Ptr->BERRYTrees[id] = gBlankBerryTree;
+    gSaveBlock1Ptr->berryTrees[id] = gBlankBerryTree;
 }
 
 u8 GetBerryTypeByBerryTreeId(u8 id)
 {
-    return gSaveBlock1Ptr->BERRYTrees[id].BERRY;
+    return gSaveBlock1Ptr->berryTrees[id].berry;
 }
 
 u8 GetStageByBerryTreeId(u8 id)
 {
-    return gSaveBlock1Ptr->BERRYTrees[id].stage;
+    return gSaveBlock1Ptr->berryTrees[id].stage;
 }
 
 u8 ItemIdToBerryType(u16 item)
@@ -1596,16 +1596,16 @@ static u8 CalcBerryYieldInternal(u16 max, u16 min, u8 water)
 
 static u8 CalcBerryYield(struct BerryTree *tree)
 {
-    const struct Berry *BERRY = GetBerryInfo(tree->BERRY);
-    u8 min = BERRY->minYield;
-    u8 max = BERRY->maxYield;
+    const struct Berry *berry = GetBerryInfo(tree->berry);
+    u8 min = berry->minYield;
+    u8 max = berry->maxYield;
 
     return CalcBerryYieldInternal(max, min, BerryTreeGetNumStagesWatered(tree));
 }
 
 static u8 GetBerryCountByBerryTreeId(u8 id)
 {
-    return gSaveBlock1Ptr->BERRYTrees[id].BERRYYield;
+    return gSaveBlock1Ptr->berryTrees[id].berryYield;
 }
 
 static u16 GetStageDurationByBerryType(u8 BERRY)
@@ -1679,7 +1679,7 @@ void ObjectEventInteractionRemoveBerryTree(void)
 
 bool8 PlayerHasBerries(void)
 {
-    return IsBagPocketNonEmpty(POCKET_berries);
+    return IsBagPocketNonEmpty(POCKET_BERRIES);
 }
 
 void ResetBerryTreeSparkleFlags(void)
@@ -1704,7 +1704,7 @@ void ResetBerryTreeSparkleFlags(void)
             cam_left = gObjectEvents[i].currentCoords.x;
             cam_top = gObjectEvents[i].currentCoords.y;
             if (left <= cam_left && cam_left <= right && top <= cam_top && cam_top <= bottom)
-                ResetBerryTreeSparkleFlag(gObjectEvents[i].trainerRange_BERRYTreeId);
+                ResetBerryTreeSparkleFlag(gObjectEvents[i].trainerRange_berryTreeId);
         }
     }
 }
