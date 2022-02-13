@@ -259,9 +259,9 @@ LilycoveCity_PokemonCenter_1F_EventScript_SubmitQuizResponse:: @ 82A8689
     end
 
 LilycoveCity_PokemonCenter_1F_EventScript_CorrectResponse:: @ 82A86B0
-    playse SE_SEIKAI
+    playse SE_SUCCESS
     delay 10
-    playse SE_SEIKAI
+    playse SE_SUCCESS
     msgbox LilycoveCity_PokemonCenter_1F_Text_YouGotItRight, MSGBOX_DEFAULT
     goto LilycoveCity_PokemonCenter_1F_EventScript_ReadyGivePrize
     end
@@ -269,9 +269,9 @@ LilycoveCity_PokemonCenter_1F_EventScript_CorrectResponse:: @ 82A86B0
 LilycoveCity_PokemonCenter_1F_EventScript_IncorrectResponse:: @ 82A86C7
     special BufferQuizCorrectAnswer
     special BufferQuizPrizeName
-    playse SE_HAZURE
+    playse SE_FAILURE
     delay 10
-    playse SE_HAZURE
+    playse SE_FAILURE
     msgbox LilycoveCity_PokemonCenter_1F_Text_WrongTheCorrectAnswerIs, MSGBOX_DEFAULT
     msgbox LilycoveCity_PokemonCenter_1F_Text_IGetToKeepPrize, MSGBOX_DEFAULT
     goto LilycoveCity_PokemonCenter_1F_EventScript_AskMakeQuiz
@@ -673,7 +673,7 @@ LilycoveCity_PokemonCenter_1F_Text_YouDontHaveSpaceForIt: @ 82A8DBD
     .string "Oh, you can't have it if you don't have\n"
     .string "the space for it.\p"
     .string "Please come see me when you get\n"
-    .string "your bag organized…$"
+    .string "your Bag organized…$"
 
 LilycoveCity_PokemonCenter_1F_Text_ImTheQuizLady: @ 82A8E2B
     .string "I'm the Quiz Lady!\n"
@@ -727,7 +727,7 @@ LilycoveCity_PokemonCenter_1F_Text_XReceivedOneY: @ 82A9056
     .string "one {STR_VAR_2}!$"
 
 LilycoveCity_PokemonCenter_1F_Text_YourBagIsFilledUp: @ 82A906A
-    .string "Oh? Your bag is filled up!\n"
+    .string "Oh? Your Bag is filled up!\n"
     .string "Come see me when you have room.$"
 
 LilycoveCity_PokemonCenter_1F_Text_WrongTheCorrectAnswerIs: @ 82A90A5
@@ -784,7 +784,7 @@ LilycoveCity_PokemonCenter_1F_Text_IllLookForAChallenger: @ 82A9336
 
 LilycoveCity_PokemonCenter_1F_Text_ImTheContestLady: @ 82A93A7
     .string "I'm the Contest Lady!\n"
-    .string "I sure do love contests!$"
+    .string "I sure do love Contests!$"
 
 LilycoveCity_PokemonCenter_1F_Text_ThankForPokeblock: @ 82A93D6
     .string "Thanks for your {POKEBLOCK} before!$"
@@ -800,7 +800,7 @@ LilycoveCity_PokemonCenter_1F_Text_DontHaveAPokeblockCase: @ 82A9451
     .string "Please, may I have one {POKEBLOCK}?\n"
     .string "All I'm asking for is one!\p"
     .string "…Oh, but…\n"
-    .string "Don't you have a {POKEBLOCK} case?\l"
+    .string "Don't you have a {POKEBLOCK} Case?\l"
     .string "That's no good. Next time, then!$"
 
 LilycoveCity_PokemonCenter_1F_Text_AskingForOnePokeblock: @ 82A94E8
@@ -839,7 +839,7 @@ LilycoveCity_PokemonCenter_1F_Text_ReallyImprovedThanks: @ 82A9605
 LilycoveCity_PokemonCenter_1F_Text_ReadyToEnterContests: @ 82A9669
     .string "Hmm…\p"
     .string "I think we may be ready to enter\n"
-    .string "some CONTESTS.\p"
+    .string "some Contests.\p"
     .string "If you see us in one somewhere,\n"
     .string "I hope you'll cheer for us.$"
 

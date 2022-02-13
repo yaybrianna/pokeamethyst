@@ -122,7 +122,7 @@ BerryTree_EventScript_PickBerry:: @ 8274448
 	special IncrementDailyPickedBerries
 	special ObjectEventInteractionRemoveBerryTree
 	message BerryTree_Text_PickedTheBerry
-	playfanfare MUS_ME_KINOMI
+	playfanfare MUS_OBTAIN_BERRY
 	waitmessage
 	waitfanfare
 	waitbuttonpress
@@ -199,7 +199,7 @@ BerryTree_Text_ItsSoftLoamySoil: @ 82744F0
 
 BerryTree_Text_WantToPlant: @ 8274507
 	.string "It's soft, loamy soil.\n"
-	.string "Want to plant a berry?$"
+	.string "Want to plant a Berry?$"
 
 BerryTree_Text_PlantedOneBerry: @ 8274535
 	.string "{PLAYER} planted one {STR_VAR_1} in\n"

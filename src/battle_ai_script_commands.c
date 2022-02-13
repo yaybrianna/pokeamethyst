@@ -16,7 +16,6 @@
 #include "constants/battle_move_effects.h"
 #include "constants/hold_effects.h"
 #include "constants/moves.h"
-#include "constants/species.h"
 
 #define AI_ACTION_DONE          0x0001
 #define AI_ACTION_FLEE          0x0002
@@ -108,8 +107,8 @@ static void Cmd_get_considered_move_effect(void);
 static void Cmd_get_ability(void);
 static void Cmd_get_highest_type_effectiveness(void);
 static void Cmd_if_type_effectiveness(void);
-static void Cmd_nullsub_32(void);
-static void Cmd_nullsub_33(void);
+static void Cmd_nop_32(void);
+static void Cmd_nop_33(void);
 static void Cmd_if_status_in_party(void);
 static void Cmd_if_status_not_in_party(void);
 static void Cmd_get_weather(void);
@@ -240,8 +239,8 @@ static const BattleAICmdFunc sBattleAICmdTable[] =
     Cmd_get_ability,                                // 0x2F
     Cmd_get_highest_type_effectiveness,             // 0x30
     Cmd_if_type_effectiveness,                      // 0x31
-    Cmd_nullsub_32,                                 // 0x32
-    Cmd_nullsub_33,                                 // 0x33
+    Cmd_nop_32,                                     // 0x32
+    Cmd_nop_33,                                     // 0x33
     Cmd_if_status_in_party,                         // 0x34
     Cmd_if_status_not_in_party,                     // 0x35
     Cmd_get_weather,                                // 0x36
@@ -343,7 +342,7 @@ void BattleAI_SetupItems(void)
     if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER)
         && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_SAFARI | BATTLE_TYPE_BATTLE_TOWER
                                | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_SECRET_BASE | BATTLE_TYPE_FRONTIER
-                               | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_x2000000)
+                               | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_RECORDED_LINK)
             )
        )
     {
@@ -1607,11 +1606,11 @@ static void Cmd_if_user_goes(void)
     }
 }
 
-static void Cmd_nullsub_2A(void)
+static void Cmd_nop_2A(void)
 {
 }
 
-static void Cmd_nullsub_2B(void)
+static void Cmd_nop_2B(void)
 {
 }
 
@@ -1802,11 +1801,11 @@ static void Cmd_if_type_effectiveness(void)
         gAIScriptPtr += 6;
 }
 
-static void Cmd_nullsub_32(void)
+static void Cmd_nop_32(void)
 {
 }
 
-static void Cmd_nullsub_33(void)
+static void Cmd_nop_33(void)
 {
 }
 
@@ -2100,6 +2099,10 @@ static void Cmd_if_has_move_with_effect(void)
         {
             if (gBattleMons[gBattlerTarget].moves[i] != 0 && gBattleMoves[BATTLE_HISTORY->usedMoves[gBattlerTarget][i]].effect == gAIScriptPtr[2])
                 break;
+            #else
+            if (gBattleMons[gBattlerTarget].moves[i] != 0 && gBattleMoves[BATTLE_HISTORY->usedMoves[gBattlerTarget].moves[i]].effect == gAIScriptPtr[2])
+                break;
+            #endif
         }
         if (i == MAX_MON_MOVES)
             gAIScriptPtr += 7;
@@ -2394,7 +2397,7 @@ static void Cmd_call_if_move_flag(void)
     }
 }
 
-static void Cmd_nullsub_57(void)
+static void Cmd_nop_57(void)
 {
 }
 

@@ -308,11 +308,11 @@ const u8 DecorDesc_SPIKES_MAT[] = _(
 const u8 DecorDesc_BALL_POSTER[] = _(
     "A small poster\n"
         "printed with Poké\n"
-        "BallS.");
+        "Balls.");
 
 const u8 DecorDesc_GREEN_POSTER[] = _(
     "A small poster with\n"
-        "a Treekco print.");
+        "a Treecko print.");
 
 const u8 DecorDesc_RED_POSTER[] = _(
     "A small poster with\n"
@@ -373,7 +373,7 @@ const u8 DecorDesc_CYNDAQUIL_DOLL[] = _(
         "or a desk.");
 
 const u8 DecorDesc_CHIKORITA_DOLL[] = _(
-    "A Chickorita doll.\n"
+    "A Chikorita doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
@@ -408,7 +408,7 @@ const u8 DecorDesc_SMOOCHUM_DOLL[] = _(
         "or a desk.");
 
 const u8 DecorDesc_TREECKO_DOLL[] = _(
-    "A Treekco doll.\n"
+    "A Treecko doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 

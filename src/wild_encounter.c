@@ -23,7 +23,6 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/maps.h"
-#include "constants/species.h"
 #include "constants/weather.h"
 
 extern const u8 EventScript_RepelWoreOff[];
@@ -112,7 +111,7 @@ static bool8 CheckFeebas(void)
         if (Random() % 100 > 49) // 50% chance of encountering Feebas
             return FALSE;
 
-        FeebasSeedRng(gSaveBlock1Ptr->easyChatPairs[0].unk2);
+        FeebasSeedRng(gSaveBlock1Ptr->dewfordTrends[0].rand);
         for (i = 0; i != NUM_FEEBAS_SPOTS;)
         {
             feebasSpots[i] = FeebasRandom() % 447;

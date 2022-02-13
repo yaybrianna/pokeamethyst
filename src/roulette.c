@@ -30,7 +30,6 @@
 #include "constants/coins.h"
 #include "constants/rgb.h"
 #include "constants/roulette.h"
-#include "constants/species.h"
 #include "constants/songs.h"
 
 #define BALLS_PER_ROUND 6
@@ -276,7 +275,7 @@ struct RouletteTable
     struct Taillow taillow;
     u16 ballSpeed;
     u16 baseTravelDist;
-    float var1C;
+    f32 var1C;
 };
 
 struct GridSelection
@@ -341,13 +340,13 @@ static EWRAM_DATA struct Roulette
     s16 ballTravelDistFast;
     u16 ballTravelDistMed;
     u16 ballTravelDistSlow;
-    float ballAngle;
-    float ballAngleSpeed;
-    float ballAngleAccel;
-    float ballDistToCenter;
-    float ballFallSpeed;
-    float ballFallAccel;
-    float varA0;
+    f32 ballAngle;
+    f32 ballAngleSpeed;
+    f32 ballAngleAccel;
+    f32 ballDistToCenter;
+    f32 ballFallSpeed;
+    f32 ballFallAccel;
+    f32 varA0;
     u8 playTaskId;
     u8 spinTaskId;
     u8 filler_1[2];
@@ -464,8 +463,9 @@ static const struct WindowTemplate sWindowTemplates[] =
         .paletteNum = 15,
         .baseBlock = 0xC5
     },
-    // BUG: Array not terminated properly
-    //DUMMY_WIN_TEMPLATE
+    #ifdef UBFIX
+    DUMMY_WIN_TEMPLATE,
+    #endif
 };
 
 static const struct GridSelection sGridSelections[NUM_GRID_SELECTIONS + 1] =
@@ -1522,7 +1522,7 @@ static void Task_HandleBetGridInput(u8 taskId)
         }
         else
         {
-            m4aSongNumStart(SE_REGI);
+            m4aSongNumStart(SE_SHOP);
             gTasks[taskId].func = Task_PlaceBet;
         }
     }
@@ -1679,7 +1679,7 @@ static void Task_RollBall(u8 taskId)
     gTasks[taskId].tBallNum++;
     gTasks[taskId].tTotalBallNum++;
     SetBallCounterNumLeft(BALLS_PER_ROUND - gTasks[taskId].tBallNum);
-    m4aSongNumStart(SE_TAMAKORO);
+    m4aSongNumStart(SE_ROULETTE_BALL);
     gTasks[taskId].func = Task_RecordBallHit;
 }
 
@@ -1804,14 +1804,14 @@ static void Task_PrintSpinResult(u8 taskId)
     case 2: // never happens
         if (gTasks[taskId].tMultiplier == MAX_MULTIPLIER)
         {
-            PlayFanfare(MUS_ME_B_BIG);
+            PlayFanfare(MUS_SLOTS_JACKPOT);
             DrawStdWindowFrame(sTextWindowId, FALSE);
             AddTextPrinterParameterized(sTextWindowId, 1, Roulette_Text_Jackpot, 0, 1, TEXT_SPEED_FF, NULL);
             CopyWindowToVram(sTextWindowId, 3);
         }
         else
         {
-            PlayFanfare(MUS_ME_B_SMALL);
+            PlayFanfare(MUS_SLOTS_WIN);
             DrawStdWindowFrame(sTextWindowId, FALSE);
             AddTextPrinterParameterized(sTextWindowId, 1, Roulette_Text_ItsAHit, 0, 1, TEXT_SPEED_FF, NULL);
             CopyWindowToVram(sTextWindowId, 3);
@@ -1819,7 +1819,7 @@ static void Task_PrintSpinResult(u8 taskId)
         break;
     case FALSE:
     default:
-        m4aSongNumStart(SE_HAZURE);
+        m4aSongNumStart(SE_FAILURE);
         DrawStdWindowFrame(sTextWindowId, FALSE);
         AddTextPrinterParameterized(sTextWindowId, 1, Roulette_Text_NothingDoing, 0, 1, TEXT_SPEED_FF, NULL);
         CopyWindowToVram(sTextWindowId, 3);
@@ -1968,7 +1968,7 @@ static void ExitRoulette(u8 taskId)
         gSpecialVar_0x8004 = TRUE;
     else
         gSpecialVar_0x8004 = FALSE;
-    AlertTVOfNewCoinTotal(GetCoins());
+    TryPutFindThatGamerOnAir(GetCoins());
     BeginHardwarePaletteFade(0xFF, 0, 0, 16, 0);
     gTasks[taskId].func = Task_ExitRoulette;
 }
@@ -2896,7 +2896,9 @@ static const union AnimCmd sAnim_CreditDigit[] =
     ANIMCMD_FRAME(18, 0), // 9
     // BUG: Animation not terminated properly
     // Doesn't matter in practice, the frames are set directly and not looped
-    //ANIMCMD_END
+#ifdef BUGFIX
+    ANIMCMD_END
+#endif
 };
 
 static const union AnimCmd *const sAnims_CreditDigit[] =
@@ -3389,7 +3391,7 @@ static void Task_AcceptMinBet(u8 taskId)
     ClearStdWindowAndFrame(0, TRUE);
     HideCoinsWindow();
     FreeAllWindowBuffers();
-    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gPaletteFade.delayCounter = gPaletteFade.multipurpose2;
     UpdatePaletteFade();
     gTasks[taskId].func = Task_FadeToRouletteGame;
@@ -3924,7 +3926,7 @@ static void HideWheelBalls(void)
     UpdateBallRelativeWheelAngle(sprite);                                                           \
     sprite->sBallWheelAngle = (sprite->sBallWheelAngle / DEGREES_PER_SLOT) * DEGREES_PER_SLOT + 15; \
     sprite->callback = SpriteCB_BallLandInSlot;                                                     \
-    m4aSongNumStartOrChange(SE_HASHI);                                                              \
+    m4aSongNumStartOrChange(SE_BRIDGE_WALK);                                                              \
 }
 
 // "wheelAngle" and "sBallAngle" are relative to the screen (e.g. 180 degrees for either is always screen bottom)
@@ -3948,7 +3950,7 @@ static s16 UpdateBallRelativeWheelAngle(struct Sprite *sprite)
 
 static u8 UpdateSlotBelowBall(struct Sprite *sprite)
 {
-    sRoulette->hitSlot = UpdateBallRelativeWheelAngle(sprite) / (float) DEGREES_PER_SLOT;
+    sRoulette->hitSlot = UpdateBallRelativeWheelAngle(sprite) / (f32)DEGREES_PER_SLOT;
     return sRoulette->hitSlot;
 }
 
@@ -4050,7 +4052,7 @@ static void SpriteCB_UnstickBall_ShroomishBallFall(struct Sprite *sprite)
 
 static void SpriteCB_UnstickBall_Shroomish(struct Sprite *sprite)
 {
-    float slotOffset, ballFallDist, ballFallSpeed;
+    f32 slotOffset, ballFallDist, ballFallSpeed;
     UpdateBallPos(sprite);
 
     switch (sprite->sBallAngle)
@@ -4136,7 +4138,7 @@ static void SpriteCB_UnstickBall_TaillowPickUp(struct Sprite *sprite)
             sprite->animEnded = FALSE;
             sprite->data[2] = 0;
             sprite->callback = SpriteCB_UnstickBall_TaillowDrop;
-            m4aSongNumStart(SE_NAGERU);
+            m4aSongNumStart(SE_BALL_THROW);
         }
     }
 }
@@ -4203,7 +4205,7 @@ static void SpriteCB_RollBall_TryLandAdjacent(struct Sprite *sprite)
         {
             // Ball is stuck, need Shroomish/Taillow to clear ball
             sprite->animPaused = TRUE;
-            m4aSongNumStart(SE_KON);
+            m4aSongNumStart(SE_BALL_BOUNCE_1);
             SetBallStuck(sprite);
         }
     }
@@ -4224,7 +4226,7 @@ static void SpriteCB_RollBall_TryLand(struct Sprite *sprite)
         // Space has already been landed on, try to fall into adjacent space
         u8 slotId;
         u32 fallRight;
-        m4aSongNumStart(SE_KON);
+        m4aSongNumStart(SE_BALL_BOUNCE_1);
         fallRight = Random() & 1;
         if (fallRight)
         {
@@ -4233,7 +4235,7 @@ static void SpriteCB_RollBall_TryLand(struct Sprite *sprite)
         }
         else // fall left
         {
-            float temp;
+            f32 temp;
             sRoulette->ballAngleSpeed = (temp = sRouletteTables[sRoulette->tableId].var1C) * 2.0f;
             slotId = (sRoulette->hitSlot + NUM_ROULETTE_SLOTS - 1) % NUM_ROULETTE_SLOTS;
             sRoulette->stuckHitSlot = sRoulette->hitSlot;
@@ -4279,7 +4281,7 @@ static void SpriteCB_RollBall_Slow(struct Sprite *sprite)
     {
         // Reached slot to land in
         sRoulette->ballAngleAccel = 0.0f;
-        sRoulette->ballAngleSpeed -= (float)(sRouletteTables[sRoulette->tableId].wheelSpeed)
+        sRoulette->ballAngleSpeed -= (f32)(sRouletteTables[sRoulette->tableId].wheelSpeed)
             / (sRouletteTables[sRoulette->tableId].wheelDelay + 1);
         sprite->sState = 4;
         sprite->callback = SpriteCB_RollBall_TryLand;
@@ -4304,8 +4306,8 @@ static void SpriteCB_RollBall_Medium(struct Sprite *sprite)
     if (sRoulette->ballDistToCenter > 40.0f)
         return;
 
-    sRoulette->ballFallSpeed = -(4.0f / (float)(sRoulette->ballTravelDistSlow));
-    sRoulette->ballAngleAccel = -(sRoulette->ballAngleSpeed / (float)(sRoulette->ballTravelDistSlow));
+    sRoulette->ballFallSpeed = -(4.0f / (f32)(sRoulette->ballTravelDistSlow));
+    sRoulette->ballAngleAccel = -(sRoulette->ballAngleSpeed / (f32)(sRoulette->ballTravelDistSlow));
     sprite->animNum = 2;
     sprite->animBeginning = TRUE;
     sprite->animEnded = FALSE;
@@ -4319,9 +4321,9 @@ static void SpriteCB_RollBall_Fast(struct Sprite *sprite)
     if (sRoulette->ballDistToCenter > 60.0f)
         return;
 
-    m4aSongNumStartOrChange(SE_TAMAKORO_E);
-    sRoulette->ballFallSpeed = -(20.0f / (float)(sRoulette->ballTravelDistMed));
-    sRoulette->ballAngleAccel = ((1.0f - sRoulette->ballAngleSpeed) / (float)(sRoulette->ballTravelDistMed));
+    m4aSongNumStartOrChange(SE_ROULETTE_BALL2);
+    sRoulette->ballFallSpeed = -(20.0f / (f32)(sRoulette->ballTravelDistMed));
+    sRoulette->ballAngleAccel = ((1.0f - sRoulette->ballAngleSpeed) / (f32)(sRoulette->ballTravelDistMed));
     sprite->animNum = 1;
     sprite->animBeginning = TRUE;
     sprite->animEnded = FALSE;
@@ -4558,7 +4560,7 @@ static void SpriteCB_ShroomishShakeScreen(struct Sprite *sprite)
 
 static void SpriteCB_ShroomishFall(struct Sprite *sprite)
 {
-    float timer;
+    f32 timer;
     sprite->data[1]++;
     timer = sprite->data[1];
     sprite->pos2.y = timer * 0.039f * timer;
@@ -4573,7 +4575,7 @@ static void SpriteCB_ShroomishFall(struct Sprite *sprite)
         gSprites[sprite->sMonShadowSpriteId].data[1] = -2;
         gSprites[sprite->sBallShadowSpriteId].invisible = FALSE;
         gSprites[sprite->sBallShadowSpriteId].callback  = SpriteCB_ShroomishShakeScreen;
-        m4aSongNumStart(SE_W070);
+        m4aSongNumStart(SE_M_STRENGTH);
     }
 }
 
@@ -4596,7 +4598,7 @@ static void SpriteCB_Shroomish(struct Sprite *sprite)
 
         sprite->invisible = FALSE;
         sprite->data[7]++;
-        m4aSongNumStart(SE_RU_HYUU);
+        m4aSongNumStart(SE_FALL);
         sRoulette->shroomishShadowTimer = 1;
         sRoulette->shroomishShadowAlpha = sShroomishShadowAlphas[0];
     }
@@ -4643,7 +4645,7 @@ static void SpriteCB_Taillow_FlyAway(struct Sprite *sprite)
         sprite->callback = SpriteCallbackDummy;
         sprite->invisible = TRUE;
         sprite->animPaused = TRUE;
-        m4aSongNumStop(SE_BASABASA);
+        m4aSongNumStop(SE_TAILLOW_WING_FLAP);
         DestroySprite(sprite);
         FreeOamMatrix(gSprites[sRoulette->spriteIds[SPR_CLEAR_MON_SHADOW_1]].oam.matrixNum);
         DestroySprite(&gSprites[sRoulette->spriteIds[SPR_CLEAR_MON_SHADOW_1]]);
@@ -4674,7 +4676,7 @@ static void SpriteCB_Taillow_PickUpBall(struct Sprite *sprite)
         }
         else
         {
-            m4aSongNumStart(SE_RU_HYUU);
+            m4aSongNumStart(SE_FALL);
             StartSpriteAnim(sprite, sRoulette->ball->sStuckOnWheelLeft + 4);
             sprite->callback = SpriteCB_Taillow_FlyAway;
             gSprites[sprite->sMonShadowSpriteId].affineAnimPaused = FALSE;
@@ -4715,7 +4717,7 @@ static void SpriteCB_Taillow_FlyIn(struct Sprite *sprite)
         }
         else
         {
-            m4aSongNumStartOrChange(SE_BASABASA);
+            m4aSongNumStartOrChange(SE_TAILLOW_WING_FLAP);
             if (sRoulette->ball->sStuckOnWheelLeft == 0)
                 PlayCry1(SPECIES_TAILLOW, 63);
             else
@@ -4770,5 +4772,5 @@ static void SpriteCB_Taillow(struct Sprite *sprite)
     }
     gSprites[sprite->sMonShadowSpriteId].callback = SpriteCB_TaillowShadow_FlyIn;
     gSprites[sprite->sMonSpriteId].callback = SpriteCB_Taillow_FlyIn;
-    m4aSongNumStart(SE_RU_HYUU);
+    m4aSongNumStart(SE_FALL);
 }

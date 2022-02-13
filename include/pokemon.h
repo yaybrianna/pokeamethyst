@@ -126,12 +126,12 @@ struct Pokemon
 
 struct Unknown_806F160_Struct
 {
-    u8 field_0_0:4;
-    u8 field_0_1:4;
-    u8 field_1;
-    u8 magic;
-    u8 field_3_0:4;
-    u8 field_3_1:4;
+    u32 field_0_0:4;
+    u32 field_0_1:4;
+    u32 field_1:8;
+    u16 magic:8;
+    u32 field_3_0:4;
+    u32 field_3_1:4;
     void *bytes;
     u8 **byteArrays;
     struct SpriteTemplate *templates;
@@ -242,6 +242,15 @@ struct Evolution
     u16 targetSpecies;
 };
 
+#define NUM_UNOWN_FORMS 28
+
+#define GET_UNOWN_LETTER(personality) ((   \
+      (((personality) & 0x03000000) >> 18) \
+    | (((personality) & 0x00030000) >> 12) \
+    | (((personality) & 0x00000300) >> 6)  \
+    | (((personality) & 0x00000003) >> 0)  \
+) % NUM_UNOWN_FORMS)
+
 extern u8 gPlayerPartyCount;
 extern struct Pokemon gPlayerParty[PARTY_SIZE];
 extern u8 gEnemyPartyCount;
@@ -253,7 +262,6 @@ extern const u8 gFacilityClassToPicIndex[];
 extern const u8 gFacilityClassToTrainerClass[];
 extern const struct BaseStats gBaseStats[];
 extern const u8 *const gItemEffectTable[];
-extern const struct Evolution gEvolutionTable[][EVOS_PER_MON];
 extern const u32 gExperienceTables[][MAX_LEVEL + 1];
 extern const struct LevelUpMove *const gLevelUpLearnsets[];
 extern const u8 gPPUpGetMask[];
@@ -261,7 +269,7 @@ extern const u8 gPPUpSetMask[];
 extern const u8 gPPUpAddMask[];
 extern const u8 gStatStageRatios[MAX_STAT_STAGE + 1][2];
 extern const u16 gLinkPlayerFacilityClasses[];
-extern const struct SpriteTemplate gUnknown_08329D98[];
+extern const struct SpriteTemplate gBattlerSpriteTemplates[];
 extern const s8 gNatureStatTable[][5];
 
 void ZeroBoxMonData(struct BoxPokemon *boxMon);
@@ -280,13 +288,13 @@ void CreateBattleTowerMon(struct Pokemon *mon, struct BattleTowerPokemon *src);
 void CreateBattleTowerMon2(struct Pokemon *mon, struct BattleTowerPokemon *src, bool8 lvl50);
 void CreateApprenticeMon(struct Pokemon *mon, const struct Apprentice *src, u8 monId);
 void CreateMonWithEVSpreadNatureOTID(struct Pokemon *mon, u16 species, u8 level, u8 nature, u8 fixedIV, u8 evSpread, u32 otId);
-void sub_80686FC(struct Pokemon *mon, struct BattleTowerPokemon *dest);
-void CreateObedientMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId);
-bool8 sub_80688F8(u8 caseId, u8 battlerId);
+void ConvertPokemonToBattleTowerPokemon(struct Pokemon *mon, struct BattleTowerPokemon *dest);
+void CreateEventLegalMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId);
+bool8 ShouldIgnoreDeoxysForm(u8 caseId, u8 battlerId);
 void SetDeoxysStats(void);
 u16 GetUnionRoomTrainerPic(void);
 u16 GetUnionRoomTrainerClass(void);
-void CreateObedientEnemyMon(void);
+void CreateEventLegalEnemyMon(void);
 void CalculateMonStats(struct Pokemon *mon);
 void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest);
 u8 GetLevelFromMonExp(struct Pokemon *mon);
@@ -386,7 +394,7 @@ void ClearBattleMonForms(void);
 u16 GetBattleBGM(void);
 void PlayBattleBGM(void);
 void PlayMapChosenOrBattleBGM(u16 songId);
-void sub_806E694(u16 songId);
+void CreateTask_PlayMapChosenOrBattleBGM(u16 songId);
 const u32 *GetMonFrontSpritePal(struct Pokemon *mon);
 const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 personality);
 const struct CompressedSpritePalette *GetMonSpritePalStruct(struct Pokemon *mon);

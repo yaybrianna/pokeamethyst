@@ -398,7 +398,7 @@ MeteorFalls_B1F_2R_EventScript_ItemTM02:: @ 82911DF
 	finditem ITEM_TM02
 	end
 
-NewMauville_Inside_EventScript_ItemUltraRope:: @ 82911EC
+NewMauville_Inside_EventScript_ItemUltraBall:: @ 82911EC
 	finditem ITEM_ULTRA_BALL
 	end
 
@@ -634,7 +634,7 @@ MagmaHideout_1F_EventScript_ItemRareCandy:: @ 82914DE
 	finditem ITEM_RARE_CANDY
 	end
 
-MagmaHideout_2F_2R_EventScript_MaxElixir:: @ 82914EB
+MagmaHideout_2F_2R_EventScript_ItemMaxElixir:: @ 82914EB
 	finditem ITEM_MAX_ELIXIR
 	end
 
@@ -650,7 +650,7 @@ MagmaHideout_3F_2R_EventScript_ItemPPMax:: @ 8291512
 	finditem ITEM_PP_MAX
 	end
 
-MagmaHideout_4F_EventScript_MaxRevive:: @ 829151F
+MagmaHideout_4F_EventScript_ItemMaxRevive:: @ 829151F
 	finditem ITEM_MAX_REVIVE
 	end
 

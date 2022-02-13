@@ -38,7 +38,7 @@ Route117_EventScript_DaycareAcceptEgg:: @ 8291C83
 
 Route117_EventScript_DaycareReceiveEgg:: @ 8291C9D
 	message Route117_Text_ReceivedEgg
-	playfanfare MUS_FANFA1
+	playfanfare MUS_LEVEL_UP
 	waitfanfare
 	waitbuttonpress
 	msgbox Route117_Text_TakeGoodCareOfIt, MSGBOX_DEFAULT
@@ -217,7 +217,7 @@ Route117_PokemonDayCare_EventScript_RetrieveMon:: @ 8291EE2
 	waitmovement 0
 	specialvar VAR_RESULT, TakePokemonFromDaycare
 	special SubtractMoneyFromVar0x8005
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox Route117_PokemonDayCare_Text_HeresYourMon, MSGBOX_DEFAULT
 	waitse
 	playmoncry VAR_RESULT, 0
@@ -304,7 +304,7 @@ EventScript_EggHatch:: @ 8291FC0
 Route117_Text_SeeWifeIfYoudLikeMeToRaiseMon: @ 8291FCF
 	.string "I'm the Day-Care Man.\p"
 	.string "I help take care of the precious\n"
-	.string "Pokémon of trainers.\p"
+	.string "Pokémon of Trainers.\p"
 	.string "If you'd like me to raise your Pokémon,\n"
 	.string "have a word with my wife.$"
 
@@ -312,7 +312,7 @@ Route117_Text_DoYouWantEgg: @ 829205D
 	.string "Ah, it's you!\p"
 	.string "We were raising your Pokémon,\n"
 	.string "and my goodness, were we surprised!\p"
-	.string "Your Pokémon had an egg!\p"
+	.string "Your Pokémon had an Egg!\p"
 	.string "We don't know how it got there,\n"
 	.string "but your Pokémon had it.\p"
 	.string "You do want it, yes?$"
@@ -330,7 +330,7 @@ Route117_Text_YouHaveNoRoomForIt: @ 829216A
 	.string "Come back when you've made room.$"
 
 Route117_Text_ReceivedEgg: @ 82921A4
-	.string "{PLAYER} received the egg from\n"
+	.string "{PLAYER} received the Egg from\n"
 	.string "the Day-Care Man.$"
 
 Route117_Text_TakeGoodCareOfIt: @ 82921CF
@@ -341,7 +341,7 @@ Route117_Text_FriendlyWithOtherTrainersMon: @ 82921E5
 	.string "it seemed to be friendly with\l"
 	.string "{STR_VAR_2}'s {STR_VAR_3}.\p"
 	.string "I may even have seen it receiving\n"
-	.string "a piece of mail.$"
+	.string "a piece of Mail.$"
 
 @ Unused
 Route117_Text_SeeWifeIfYouWantToPickUpMon: @ 829225A

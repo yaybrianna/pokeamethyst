@@ -31,7 +31,7 @@
 #define ITEM4_EV_HP             0x1
 #define ITEM4_EV_ATK            0x2
 #define ITEM4_HEAL_HP           0x4
-#define ITEM4_HEAL_PP_ALL       0x8
+#define ITEM4_HEAL_PP           0x8
 #define ITEM4_HEAL_PP_ONE       0x10
 #define ITEM4_PP_UP             0x20
 #define ITEM4_REVIVE            0x40

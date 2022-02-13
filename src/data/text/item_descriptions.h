@@ -3,17 +3,17 @@ static const u8 sDummyDesc[] = _(
 
 // Pokeballs
 static const u8 sMasterBallDesc[] = _(
-    "The best ball that\n"
+    "The best Ball that\n"
     "catches a Pokémon\n"
     "without fail.");
 
 static const u8 sUltraBallDesc[] = _(
-    "A better ball with\n"
+    "A better Ball with\n"
     "a higher catch rate\n"
     "than a Great Ball.");
 
 static const u8 sGreatBallDesc[] = _(
-    "A good ball with a\n"
+    "A good Ball with a\n"
     "higher catch rate\n"
     "than a Poké Ball.");
 
@@ -23,42 +23,42 @@ static const u8 sPokeBallDesc[] = _(
     "Pokémon.");
 
 static const u8 sSafariBallDesc[] = _(
-    "A special  that\n"
+    "A special Ball that\n"
     "is used only in the\n"
     "Safari Zone.");
 
 static const u8 sNetBallDesc[] = _(
-    "A ball that works\n"
+    "A Ball that works\n"
     "well on Water- and\n"
     "Bug-type Pokémon.");
 
 static const u8 sDiveBallDesc[] = _(
-    "A ball that works\n"
+    "A Ball that works\n"
     "better on Pokémon\n"
     "on the ocean floor.");
 
 static const u8 sNestBallDesc[] = _(
-    "A ball that works\n"
+    "A Ball that works\n"
     "better on weaker\n"
     "Pokémon.");
 
 static const u8 sRepeatBallDesc[] = _(
-    "A ball that works\n"
+    "A Ball that works\n"
     "better on Pokémon\n"
     "caught before.");
 
 static const u8 sTimerBallDesc[] = _(
-    "A ball that gains\n"
+    "A Ball that gains\n"
     "power in battles\n"
     "taking many turns.");
 
 static const u8 sLuxuryBallDesc[] = _(
-    "A cozy ball that\n"
+    "A cozy Ball that\n"
     "makes Pokémon\n"
     "more friendly.");
 
 static const u8 sPremierBallDesc[] = _(
-    "A rare ball made\n"
+    "A rare Ball made\n"
     "in commemoration\n"
     "of some event.");
 
@@ -655,7 +655,7 @@ static const u8 sShadowMailDesc[] = _(
     "a Pokémon.");
 
 static const u8 sTropicMailDesc[] = _(
-    "A Bellosom-print\n"
+    "A Bellossom-print\n"
     "Mail to be held by\n"
     "a Pokémon.");
 
@@ -1003,7 +1003,7 @@ static const u8 sMachoBraceDesc[] = _(
 
 static const u8 sExpShareDesc[] = _(
     "A hold item that\n"
-    "gets EXP. points\n"
+    "gets Exp. points\n"
     "from battles.");
 
 static const u8 sQuickClawDesc[] = _(
@@ -1078,7 +1078,7 @@ static const u8 sFocusBandDesc[] = _(
 
 static const u8 sLuckyEggDesc[] = _(
     "A hold item that\n"
-    "boosts EXP. points\n"
+    "boosts Exp. points\n"
     "earned in battle.");
 
 static const u8 sScopeLensDesc[] = _(
@@ -1373,7 +1373,7 @@ static const u8 sMachBikeDesc[] = _(
 
 static const u8 sCoinCaseDesc[] = _(
     "A case that holds\n"
-    "up to 9,999 coins.");
+    "up to 9,999 Coins.");
 
 static const u8 sItemfinderDesc[] = _(
     "A device that\n"
@@ -1432,7 +1432,7 @@ static const u8 sAcroBikeDesc[] = _(
 
 static const u8 sPokeblockCaseDesc[] = _(
     "A case for holding\n"
-    "{POKEBLOCK}S made with\n"
+    "{POKEBLOCK}s made with\n"
     "a Berry Blender.");
 
 static const u8 sLetterDesc[] = _(
@@ -1703,7 +1703,7 @@ static const u8 sTM38Desc[] = _(
 static const u8 sTM39Desc[] = _(
     "Stops the foe from\n"
     "moving with rocks.\n"
-    "May lower speed.");
+    "May lower Speed.");
 
 static const u8 sTM40Desc[] = _(
     "An extremely fast\n"
@@ -1929,7 +1929,7 @@ static const u8 sTriPassDesc[] = _(
 
 static const u8 sRainbowPassDesc[] = _(
     "For ferries serving\n"
-    "Vermillion and the\n"
+    "Vermilion and the\n"
     "Sevii Islands.");
 
 static const u8 sTeaDesc[] = _(

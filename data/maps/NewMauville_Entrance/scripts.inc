@@ -40,7 +40,7 @@ NewMauville_Entrance_EventScript_Door:: @ 82372FF
 	setmetatile 4, 1, METATILE_Facility_NewMauvilleDoor_Open_Tile4, 0
 	setmetatile 5, 1, METATILE_Facility_NewMauvilleDoor_Open_Tile5, 1
 	special DrawWholeMapView
-	playse SE_BAN
+	playse SE_BANG
 	setvar VAR_NEW_MAUVILLE_STATE, 1
 	releaseall
 	end
@@ -53,9 +53,9 @@ NewMauville_Entrance_Text_DoorIsLocked: @ 8237382
 	.string "The door is locked.$"
 
 NewMauville_Entrance_Text_UseBasementKey: @ 8237396
-	.string "Use the BASEMENT KEY?$"
+	.string "Use the Basement Key?$"
 
 NewMauville_Entrance_Text_UsedBasementKey: @ 82373AC
-	.string "{PLAYER} used the BASEMENT KEY.\p"
+	.string "{PLAYER} used the Basement Key.\p"
 	.string "The door opened!$"
 

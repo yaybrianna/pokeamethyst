@@ -2486,7 +2486,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_GLIGAR] =
     {
-        .categoryName = _("Flyscorpion"),
+        .categoryName = _("FlyScorpion"),
         .height = 11,
         .weight = 648,
         .description = gGligarPokedexText,
@@ -3158,7 +3158,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_ZIGZAGOON] =
     {
-        .categoryName = _("Tinyraccoon"),
+        .categoryName = _("TinyRaccoon"),
         .height = 4,
         .weight = 175,
         .description = gZigzagoonPokedexText,
@@ -3314,7 +3314,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_TAILLOW] =
     {
-        .categoryName = _("Tinyswallow"),
+        .categoryName = _("TinySwallow"),
         .height = 3,
         .weight = 23,
         .description = gTaillowPokedexText,

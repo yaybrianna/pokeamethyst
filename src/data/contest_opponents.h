@@ -1,7 +1,6 @@
 
 #include "global.h"
 #include "contest.h"
-#include "constants/species.h"
 
 #define CONTEST_OPPONENT_JIMMY 0
 #define CONTEST_OPPONENT_EDITH 1
@@ -139,7 +138,7 @@
 
 const struct ContestWinner gDefaultContestWinners[] =
 {
-    {
+    [CONTEST_WINNER_HALL_1 - 1] = {
         .personality = 0,
         .trainerId = 0xFFFF,
         .species = SPECIES_ELECTRIKE,
@@ -148,7 +147,7 @@ const struct ContestWinner gDefaultContestWinners[] =
         .trainerName = _("Ezra"),
         .contestRank = CONTEST_RANK_NORMAL
     },
-    {
+    [CONTEST_WINNER_HALL_2 - 1] = {
         .personality = 0,
         .trainerId = 0xFFFF,
         .species = SPECIES_TROPIUS,
@@ -157,7 +156,7 @@ const struct ContestWinner gDefaultContestWinners[] =
         .trainerName = _("Allan"),
         .contestRank = CONTEST_RANK_HYPER
     },
-    {
+    [CONTEST_WINNER_HALL_3 - 1] = {
         .personality = 0,
         .trainerId = 0xFFFF,
         .species = SPECIES_XATU,
@@ -166,7 +165,7 @@ const struct ContestWinner gDefaultContestWinners[] =
         .trainerName = _("Juliet"),
         .contestRank = CONTEST_RANK_NORMAL
     },
-    {
+    [CONTEST_WINNER_HALL_4 - 1] = {
         .personality = 0,
         .trainerId = 0xFFFF,
         .species = SPECIES_PLUSLE,
@@ -175,7 +174,7 @@ const struct ContestWinner gDefaultContestWinners[] =
         .trainerName = _("Baily"),
         .contestRank = CONTEST_RANK_MASTER
     },
-    {
+    [CONTEST_WINNER_HALL_5 - 1] = {
         .personality = 0,
         .trainerId = 0xFFFF,
         .species = SPECIES_SHUPPET,
@@ -184,7 +183,7 @@ const struct ContestWinner gDefaultContestWinners[] =
         .trainerName = _("Melany"),
         .contestRank = CONTEST_RANK_SUPER
     },
-    {
+    [CONTEST_WINNER_HALL_6 - 1] = {
         .personality = 0,
         .trainerId = 0xFFFF,
         .species = SPECIES_ZANGOOSE,
@@ -193,7 +192,7 @@ const struct ContestWinner gDefaultContestWinners[] =
         .trainerName = _("Hana"),
         .contestRank = CONTEST_RANK_HYPER
     },
-    {
+    [CONTEST_WINNER_HALL_UNUSED_1 - 1] = {
         .personality = 0,
         .trainerId = 0xFFFF,
         .species = SPECIES_LOUDRED,
@@ -202,7 +201,7 @@ const struct ContestWinner gDefaultContestWinners[] =
         .trainerName = _("Bryant"),
         .contestRank = CONTEST_RANK_HYPER
     },
-    {
+    [CONTEST_WINNER_HALL_UNUSED_2 - 1] = {
         .personality = 0,
         .trainerId = 0xFFFF,
         .species = SPECIES_DELCATTY,
@@ -665,7 +664,7 @@ const struct ContestPokemon gContestOpponents[] =
     },
     [CONTEST_OPPONENT_BEAU] = {
         .species = SPECIES_BUTTERFREE,
-        .nickname = _("Futterbe"),
+        .nickname = _("Flutterbe"),
         .trainerName = _("Beau"),
         .trainerGfxId = OBJ_EVENT_GFX_HEX_MANIAC,
         .aiFlags = CONTEST_AI_SET_2,

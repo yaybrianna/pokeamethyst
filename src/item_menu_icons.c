@@ -434,13 +434,13 @@ static const struct SpriteTemplate gBerryCheckCircleSpriteTemplate =
 void RemoveBagSprite(u8 id)
 {
     u8 *spriteId = &gBagMenu->spriteId[id];
-    if (*spriteId != 0xFF)
+    if (*spriteId != SPRITE_NONE)
     {
         FreeSpriteTilesByTag(id + 100);
         FreeSpritePaletteByTag(id + 100);
         FreeSpriteOamMatrix(&gSprites[*spriteId]);
         DestroySprite(&gSprites[*spriteId]);
-        *spriteId = 0xFF;
+        *spriteId = SPRITE_NONE;
     }
 }
 
@@ -540,7 +540,7 @@ static void SpriteCB_SwitchPocketRotatingBallContinue(struct Sprite *sprite)
 void AddBagItemIconSprite(u16 itemId, u8 id)
 {
     u8 *spriteId = &gBagMenu->spriteId[id + 2];
-    if (*spriteId == 0xFF)
+    if (*spriteId == SPRITE_NONE)
     {
         u8 iconSpriteId;
 
@@ -561,19 +561,19 @@ void RemoveBagItemIconSprite(u8 id)
     RemoveBagSprite(id + 2);
 }
 
-void sub_80D4FAC(void)
+void CreateItemMenuSwapLine(void)
 {
-    sub_8122344(&gBagMenu->spriteId[4], 8);
+    CreateSwapLineSprites(&gBagMenu->spriteId[4], 8);
 }
 
-void sub_80D4FC8(u8 arg0)
+void SetItemMenuSwapLineInvisibility(bool8 invisible)
 {
-    sub_81223FC(&gBagMenu->spriteId[4], 8, arg0);
+    SetSwapLineSpritesInvisibility(&gBagMenu->spriteId[4], 8, invisible);
 }
 
-void sub_80D4FEC(u8 arg0)
+void UpdateItemMenuSwapLinePos(u8 y)
 {
-    sub_8122448(&gBagMenu->spriteId[4], 136, 120, (arg0 + 1) * 16);
+    UpdateSwapLineSpritesPos(&gBagMenu->spriteId[4], 136, 120, (y + 1) * 16);
 }
 
 static void sub_80D5018(void *mem0, void *mem1)
@@ -605,10 +605,10 @@ static void LoadBerryGfx(u8 berryId)
         // unknown empty if statement
     }
 
-    pal.data = gBerryPicTable[berryId].pal;
+    pal.data = sBerryPicTable[berryId].pal;
     pal.tag = TAG_BERRY_PIC_PAL;
     LoadCompressedSpritePalette(&pal);
-    LZDecompressWram(gBerryPicTable[berryId].tiles, &gDecompressionBuffer[0x1000]);
+    LZDecompressWram(sBerryPicTable[berryId].tiles, &gDecompressionBuffer[0x1000]);
     sub_80D5018(&gDecompressionBuffer[0x1000], &gDecompressionBuffer[0]);
 }
 
@@ -623,7 +623,8 @@ void FreeBerryTagSpritePalette(void)
     FreeSpritePaletteByTag(TAG_BERRY_PIC_PAL);
 }
 
-u8 LoadSpinningBerryPicGfx(u8 berryId, u8 x, u8 y, bool8 startAffine)
+// For throwing berries into the Berry Blender
+u8 CreateSpinningBerrySprite(u8 berryId, u8 x, u8 y, bool8 startAffine)
 {
     u8 spriteId;
 

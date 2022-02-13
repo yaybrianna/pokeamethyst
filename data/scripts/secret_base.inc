@@ -5,7 +5,7 @@ SecretBase_Text_TreeCanBeClimbed: @ 8274746
 SecretBase_Text_TreeUseSecretPower: @ 8274779
 	.string "If some vines drop down, this tree can\n"
 	.string "be climbed.\p"
-	.string "Use the SECRET POWER?$"
+	.string "Use the Secret Power?$"
 
 SecretBase_Text_VineDroppedDown: @ 82747C2
 	.string "A thick vine dropped down!$"
@@ -17,7 +17,7 @@ SecretBase_Text_ClumpOfGrass: @ 82747DD
 SecretBase_Text_ClumpUseSecretPower: @ 8274825
 	.string "If this clump of grass can be moved,\n"
 	.string "it might be possible to go inside.\p"
-	.string "Use the SECRET POWER?$"
+	.string "Use the Secret Power?$"
 
 SecretBase_Text_DiscoveredSmallEntrance: @ 8274883
 	.string "Discovered a small entrance!$"
@@ -144,7 +144,7 @@ SecretBase_EventScript_ShrubEnter:: @ 8275B4D
 
 SecretBase_EventScript_InitSecretBase:: @ 8275B5B
 	closemessage
-	playse SE_KAIDAN
+	playse SE_EXIT
 	setvar VAR_INIT_SECRET_BASE, 0
 	setflag FLAG_DECORATION_0
 	special SetPlayerSecretBase
@@ -157,14 +157,14 @@ SecretBase_EventScript_InitSecretBase:: @ 8275B5B
 	end
 
 SecretBase_EventScript_FirstEntrance:: @ 8275B81
-	applymovement OBJ_EVENT_ID_PLAYER, SecretBase_Movement_275BB4
+	applymovement OBJ_EVENT_ID_PLAYER, SecretBase_Movement_EnterBase
 	waitmovement 0
 	setvar VAR_INIT_SECRET_BASE, 1
 	msgbox SecretBase_Text_WantToMakeYourSecretBaseHere, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq SecretBase_EventScript_SetAsBase
 	closemessage
-	playse SE_KAIDAN
+	playse SE_EXIT
 	special ClearAndLeaveSecretBase
 	end
 
@@ -175,7 +175,7 @@ SecretBase_EventScript_SetAsBase:: @ 8275BAB
 	waitstate
 	end
 
-SecretBase_Movement_275BB4: @ 8275BB4
+SecretBase_Movement_EnterBase: @ 8275BB4
 	walk_up
 	walk_up
 	step_end
@@ -183,7 +183,7 @@ SecretBase_Movement_275BB4: @ 8275BB4
 SecretBase_EventScript_Enter:: @ 8275BB7
 	lockall
 	setvar VAR_INIT_SECRET_BASE, 1
-	playse SE_KAIDAN
+	playse SE_EXIT
 	special IsCurSecretBaseOwnedByAnotherPlayer
 	compare VAR_RESULT, FALSE
 	goto_if_eq SecretBase_EventScript_EnterPlayersBase
@@ -308,7 +308,7 @@ SecretBase_EventScript_PutAwayDecorationLoop:: @ 8275D39
 	compare VAR_0x8005, 0
 	goto_if_eq SecretBase_EventScript_PutAwayDecorationLoop
 	removeobject VAR_0x8006
-	setflag VAR_0x8005  @ UB: GF likely meant setvar here; setflag 0x8005 is out of bounds
+	setflag VAR_0x8005  @ UB: VAR_0x8005 is set to a flag by PutAwayDecorationIteration, but ScrCmd_setflag doesn't use VarGet
 	goto SecretBase_EventScript_PutAwayDecorationLoop
 	end
 
@@ -749,12 +749,12 @@ SecretBase_EventScript_CushionInteract:: @ 82766A6
 
 SecretBase_Text_AllDecorationsWillBeReturned: @ 82766AA
 	.string "All decorations and furniture in your\n"
-	.string "SECRET BASE will be returned to your PC.\p"
+	.string "Secret Base will be returned to your PC.\p"
 	.string "Is that okay?$"
 
 SecretBase_Text_WantToRegisterSecretBase: @ 8276707
 	.string "Do you want to register\n"
-	.string "{STR_VAR_1}'s SECRET BASE?$"
+	.string "{STR_VAR_1}'s Secret Base?$"
 
 SecretBase_Text_AlreadyRegisteredDelete: @ 8276731
 	.string "This data is already registered.\n"
@@ -778,36 +778,36 @@ SecretBase_Text_WhatWouldYouLikeToDo: @ 827681A
 	.string "What would you like to do?$"
 
 SecretBase_Text_RegistryInfo: @ 8276835
-	.string "Once registered, a SECRET BASE will not\n"
-	.string "disappear unless the other TRAINER\l"
+	.string "Once registered, a Secret Base will not\n"
+	.string "disappear unless the other Trainer\l"
 	.string "moves it to a different location.\p"
-	.string "If a SECRET BASE is deleted from the\n"
+	.string "If a Secret Base is deleted from the\n"
 	.string "registered list, another one may take\l"
 	.string "its place.\p"
-	.string "Up to ten SECRET BASE locations\n"
+	.string "Up to ten Secret Base locations\n"
 	.string "may be registered.$"
 
 SecretBase_Text_BattleTowerShield: @ 827692B
 	.string "A shield of {STR_VAR_2} that marks winning\n"
-	.string "{STR_VAR_1} times in a row at the BATTLE TOWER.$"
+	.string "{STR_VAR_1} times in a row at the Battle Tower.$"
 
 SecretBase_Text_ToyTV: @ 8276974
 	.string "A realistic toy TV. It could be easily\n"
 	.string "mistaken for the real thing.$"
 
 SecretBase_Text_SeedotTV: @ 82769B8
-	.string "A toy TV shaped like a SEEDOT.\n"
+	.string "A toy TV shaped like a Seedot.\n"
 	.string "It looks ready to roll away on its own…$"
 
 SecretBase_Text_SkittyTV: @ 82769FF
-	.string "A toy TV shaped like a SKITTY.\n"
+	.string "A toy TV shaped like a Skitty.\n"
 	.string "It looks ready to stroll away…$"
 
 SecretBase_Text_WouldYouLikeToMoveBases: @ 8276A3D
-	.string "You may only make one SECRET BASE.\p"
-	.string "Would you like to move from the SECRET\n"
-	.string "BASE near {STR_VAR_1}?$"
+	.string "You may only make one Secret Base.\p"
+	.string "Would you like to move from the Secret\n"
+	.string "Base near {STR_VAR_1}?$"
 
 SecretBase_Text_MovingCompletedUseSecretPower: @ 8276A95
 	.string "Moving completed.\p"
-	.string "Would you like to use the SECRET POWER?$"
+	.string "Would you like to use the Secret Power?$"

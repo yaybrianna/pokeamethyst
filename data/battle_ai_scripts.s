@@ -793,11 +793,11 @@ AI_IsOppositeGender:
 	goto Score_Minus10
 AI_IsOppositeGenderFemale: @ 82DC61A
 	get_gender AI_TARGET
-	if_equal 254, AI_CBM_Attract_End
+	if_equal MON_FEMALE, AI_CBM_Attract_End
 	goto Score_Minus10
 AI_IsOppositeGenderMale: @ 82DC627
 	get_gender AI_TARGET
-	if_equal 0, AI_CBM_Attract_End
+	if_equal MON_MALE, AI_CBM_Attract_End
 	goto Score_Minus10
 	end
 	
@@ -2589,6 +2589,8 @@ AI_CV_Protect_ScoreDown2:
 AI_CV_Protect_End:
 	end
 
+@ BUG: Foresight is only encouraged if the user is Ghost type or
+@      has high evasion, but should check target instead
 AI_CV_Foresight:
 	if_has_move_with_type AI_USER, TYPE_NORMAL, AI_CV_ForesightGhost
 	if_has_move_with_type AI_USER, TYPE_FIGHTING, AI_CV_ForesightGhost

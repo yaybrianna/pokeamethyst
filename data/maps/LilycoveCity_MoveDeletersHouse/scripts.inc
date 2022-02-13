@@ -45,7 +45,7 @@ LilycoveCity_MoveDeletersHouse_EventScript_TryForgetMove:: @ 821EAB0
 	compare VAR_RESULT, TRUE
 	goto_if_eq LilycoveCity_MoveDeletersHouse_EventScript_LastMonWithSurf
 	special MoveDeleterForgetMove
-	playfanfare MUS_ME_WASURE
+	playfanfare MUS_MOVE_DELETED
 	waitfanfare
 	msgbox LilycoveCity_MoveDeletersHouse_Text_MonHasForgottenMove, MSGBOX_DEFAULT
 	releaseall
@@ -75,12 +75,12 @@ LilycoveCity_MoveDeletersHouse_EventScript_LastMonWithSurf:: @ 821EAF0
 
 LilycoveCity_MoveDeletersHouse_Text_ICanMakeMonForgetMove: @ 821EAFD
 	.string "Uh…\n"
-	.string "Oh, yes, I'm the MOVE DELETER.\p"
-	.string "I can make POKéMON forget their moves.\p"
+	.string "Oh, yes, I'm the Move Deleter.\p"
+	.string "I can make Pokémon forget their moves.\p"
 	.string "Would you like me to do that?$"
 
 LilycoveCity_MoveDeletersHouse_Text_WhichMonShouldForget: @ 821EB65
-	.string "Which POKéMON should forget a move?$"
+	.string "Which Pokémon should forget a move?$"
 
 LilycoveCity_MoveDeletersHouse_Text_WhichMoveShouldBeForgotten: @ 821EB89
 	.string "Which move should be forgotten?$"
@@ -104,10 +104,10 @@ LilycoveCity_MoveDeletersHouse_Text_ComeAgain: @ 821EC3F
 
 LilycoveCity_MoveDeletersHouse_Text_EggCantForgetMoves: @ 821EC78
 	.string "What?\n"
-	.string "No EGG should know any moves.$"
+	.string "No Egg should know any moves.$"
 
 LilycoveCity_MoveDeletersHouse_Text_CantForgetSurf: @ 821EC9C
 	.string "Hm!\p"
 	.string "Your {STR_VAR_1} doesn't seem willing\n"
-	.string "to forget SURF.$"
+	.string "to forget Surf.$"
 

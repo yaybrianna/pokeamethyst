@@ -49,15 +49,15 @@ EventScript_CancelCut:: @ 829072B
 
 Text_WantToCut: @ 829072E
 	.string "This tree looks like it can be\n"
-	.string "cut down!\p"
-	.string "Would you like to cut it?$"
+	.string "Cut down!\p"
+	.string "Would you like to Cut it?$"
 
 Text_MonUsedFieldMove: @ 8290771
 	.string "{STR_VAR_1} used {STR_VAR_2}!$"
 
 Text_CantCut: @ 829077D
 	.string "This tree looks like it can be\n"
-	.string "cut down!$"
+	.string "Cut down!$"
 
 @ Interact with smashable rock
 EventScript_RockSmash:: @ 82907A6

@@ -31,7 +31,11 @@
 #define ITEM_BEAST_BALL 26
 #define ITEM_PREMIER_BALL 27
 
-#define LAST_BALL ITEM_PREMIER_BALL
+// Note: If moving ball IDs around, updating FIRST_BALL/LAST_BALL is not sufficient
+//       Several places expect the ball IDs to be first and contiguous (e.g. gBattlescriptsForBallThrow and MON_DATA_POKEBALL)
+//       If adding new balls, it's easiest to insert them after the last ball and increment the below IDs (and removing ITEM_034 for example)
+#define FIRST_BALL ITEM_MASTER_BALL
+#define LAST_BALL  ITEM_PREMIER_BALL
 
 // Pokemon Items
 #define ITEM_POTION 28
@@ -729,7 +733,9 @@
 #define NUM_ROUTE_114_MAN_BERRIES         (LAST_ROUTE_114_MAN_BERRY - FIRST_ROUTE_114_MAN_BERRY + 1)
 #define NUM_ROUTE_114_MAN_BERRIES_SKIPPED (FIRST_ROUTE_114_MAN_BERRY - FIRST_BERRY_INDEX)
 
-#define ITEM_TO_BERRY(itemId)(((itemId - FIRST_BERRY_INDEX) + 1))
+#define ITEM_TO_BERRY(itemId)(((itemId) - FIRST_BERRY_INDEX) + 1)
+#define ITEM_TO_MAIL(itemId)((itemId) - FIRST_MAIL_INDEX)
+#define MAIL_NONE 0xFF
 
 #define NUM_TECHNICAL_MACHINES 50
 #define NUM_HIDDEN_MACHINES 8
@@ -738,10 +744,29 @@
 #define MAX_PC_ITEM_CAPACITY   999
 #define MAX_BERRY_CAPACITY     999
 
+#define BAG_ITEM_CAPACITY_DIGITS 2
+#define BERRY_CAPACITY_DIGITS 3
+#define MAX_ITEM_DIGITS BERRY_CAPACITY_DIGITS
+
 // Secondary IDs for rods
 #define OLD_ROD   0
 #define GOOD_ROD  1
 #define SUPER_ROD 2
+
+// Secondary IDs for bikes
+#define MACH_BIKE 0
+#define ACRO_BIKE 1
+
+// Item type IDs (used to determine the exit callback)
+#define ITEM_USE_MAIL        0
+#define ITEM_USE_PARTY_MENU  1
+#define ITEM_USE_FIELD       2
+#define ITEM_USE_PBLOCK_CASE 3
+#define ITEM_USE_BAG_MENU    4 // No exit callback, stays in bag menu
+
+// Item battle usage IDs (only checked to see if nonzero)
+#define ITEM_B_USE_MEDICINE 1
+#define ITEM_B_USE_OTHER    2
 
 // Check if the item is one that can be used on a Pokemon.
 #define ITEM_HAS_EFFECT(item) ((item) >= ITEM_POTION && (item) <= LAST_BERRY_INDEX)

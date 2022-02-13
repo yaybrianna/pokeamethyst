@@ -26,7 +26,7 @@ MauvilleCity_GameCorner_EventScript_CoinsClerk:: @ 820FBB9
 	goto MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault50
 
 MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault50:: @ 820FBE5
-	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 0, 0
+	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 0, FALSE
 	switch VAR_RESULT
 	case 0, MauvilleCity_GameCorner_EventScript_Buy50Coins
 	case 1, MauvilleCity_GameCorner_EventScript_Buy500Coins
@@ -35,7 +35,7 @@ MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault50:: @ 820FBE5
 
 @ Unused
 MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault500:: @ 820FC0C
-	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 1, 0
+	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 1, FALSE
 	switch VAR_RESULT
 	case 0, MauvilleCity_GameCorner_EventScript_Buy50Coins
 	case 1, MauvilleCity_GameCorner_EventScript_Buy500Coins
@@ -53,7 +53,7 @@ MauvilleCity_GameCorner_EventScript_Buy50Coins:: @ 820FC33
 	removemoney COINS_PRICE_50, 0
 	updatemoneybox 0, 0
 	updatecoinsbox 1, 6
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT
 	hidemoneybox
 	hidecoinsbox 0, 5
@@ -71,7 +71,7 @@ MauvilleCity_GameCorner_EventScript_Buy500Coins:: @ 820FC75
 	removemoney COINS_PRICE_500, 0
 	updatemoneybox 0, 0
 	updatecoinsbox 1, 6
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT
 	hidemoneybox
 	hidecoinsbox 0, 5
@@ -127,7 +127,7 @@ MauvilleCity_GameCorner_EventScript_ReturnToChooseDollPrize:: @ 820FD20
 	goto MauvilleCity_GameCorner_EventScript_ChooseDollPrize
 
 MauvilleCity_GameCorner_EventScript_ChooseDollPrize:: @ 820FD2B
-	multichoice 12, 0, MULTI_GAME_CORNER_DOLLS, 0
+	multichoice 12, 0, MULTI_GAME_CORNER_DOLLS, FALSE
 	switch VAR_RESULT
 	case 0, MauvilleCity_GameCorner_EventScript_TreeckoDoll
 	case 1, MauvilleCity_GameCorner_EventScript_TorchicDoll
@@ -172,7 +172,7 @@ MauvilleCity_GameCorner_EventScript_BuyTreeckoDoll:: @ 820FDCB
 	removecoins DOLL_COINS
 	adddecoration DECOR_TREECKO_DOLL
 	updatecoinsbox 1, 1
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_SendToYourHomePC, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseDollPrize
 	end
@@ -188,7 +188,7 @@ MauvilleCity_GameCorner_EventScript_BuyTorchicDoll:: @ 820FE05
 	removecoins DOLL_COINS
 	adddecoration DECOR_TORCHIC_DOLL
 	updatecoinsbox 1, 1
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_SendToYourHomePC, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseDollPrize
 	end
@@ -204,7 +204,7 @@ MauvilleCity_GameCorner_EventScript_BuyMudkipDoll:: @ 820FE3F
 	removecoins DOLL_COINS
 	adddecoration DECOR_MUDKIP_DOLL
 	updatecoinsbox 1, 1
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_SendToYourHomePC, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseDollPrize
 	end
@@ -248,7 +248,7 @@ MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize:: @ 820FECE
 	goto MauvilleCity_GameCorner_EventScript_ChooseTMPrize
 
 MauvilleCity_GameCorner_EventScript_ChooseTMPrize:: @ 820FED9
-	multichoice 12, 0, MULTI_GAME_CORNER_TMS, 0
+	multichoice 12, 0, MULTI_GAME_CORNER_TMS, FALSE
 	switch VAR_RESULT
 	case 0, MauvilleCity_GameCorner_EventScript_TM32
 	case 1, MauvilleCity_GameCorner_EventScript_TM29
@@ -312,7 +312,7 @@ MauvilleCity_GameCorner_EventScript_BuyTM32:: @ 820FFDD
 	removecoins TM32_COINS
 	additem ITEM_TM32
 	updatecoinsbox 1, 1
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize
 	end
@@ -327,7 +327,7 @@ MauvilleCity_GameCorner_EventScript_BuyTM29:: @ 8210017
 	removecoins TM29_COINS
 	additem ITEM_TM29
 	updatecoinsbox 1, 1
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize
 	end
@@ -342,7 +342,7 @@ MauvilleCity_GameCorner_EventScript_BuyTM35:: @ 8210051
 	removecoins TM35_COINS
 	additem ITEM_TM35
 	updatecoinsbox 1, 1
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize
 	end
@@ -357,7 +357,7 @@ MauvilleCity_GameCorner_EventScript_BuyTM24:: @ 821008B
 	removecoins TM24_COINS
 	additem ITEM_TM24
 	updatecoinsbox 1, 1
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize
 	end
@@ -372,7 +372,7 @@ MauvilleCity_GameCorner_EventScript_BuyTM13:: @ 82100C5
 	removecoins TM13_COINS
 	additem ITEM_TM13
 	updatecoinsbox 1, 1
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize
 	end
@@ -481,7 +481,7 @@ MauvilleCity_GameCorner_EventScript_TryGive20Coins:: @ 821023D
 	setflag FLAG_RECEIVED_20_COINS
 	addcoins 20
 	msgbox MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins, MSGBOX_DEFAULT
-	playse SE_REGI
+	playse SE_SHOP
 	goto MauvilleCity_GameCorner_EventScript_PokefanMNormal
 	end
 
@@ -670,22 +670,22 @@ MauvilleCity_GameCorner_EventScript_NoCoinCase:: @ 8210456
 	end
 
 MauvilleCity_GameCorner_Text_ThisIsMauvilleGameCorner: @ 8210460
-	.string "This is MAUVILLE GAME CORNER.$"
+	.string "This is Mauville Game Corner.$"
 
 MauvilleCity_GameCorner_Text_NeedCoinCaseForCoins: @ 821047E
-	.string "Okay, you wanted some COINS for\n"
+	.string "Okay, you wanted some Coins for\n"
 	.string "the games?\p"
-	.string "But you don't have a COIN CASE for\n"
-	.string "stowing the COINS.$"
+	.string "But you don't have a Coin Case for\n"
+	.string "stowing the Coins.$"
 
 MauvilleCity_GameCorner_Text_WereYouLookingForCoins: @ 82104DF
-	.string "Were you looking for COINS?\p"
-	.string "It's ¥1000 for 50 COINS.\n"
+	.string "Were you looking for Coins?\p"
+	.string "It's ¥1000 for 50 Coins.\n"
 	.string "Would you like some?$"
 
 MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins: @ 8210529
 	.string "Thank you very much!\n"
-	.string "Here are your COINS!$"
+	.string "Here are your Coins!$"
 
 MauvilleCity_GameCorner_Text_DontHaveEnoughMoney: @ 8210553
 	.string "Um… You don't appear to have\n"
@@ -693,15 +693,15 @@ MauvilleCity_GameCorner_Text_DontHaveEnoughMoney: @ 8210553
 
 MauvilleCity_GameCorner_Text_CoinCaseIsFull: @ 821057E
 	.string "Oh?\n"
-	.string "Your COIN CASE is full.$"
+	.string "Your Coin Case is full.$"
 
 MauvilleCity_GameCorner_Text_DontNeedCoinsThen: @ 821059A
-	.string "Oh… You don't need COINS, then?\n"
+	.string "Oh… You don't need Coins, then?\n"
 	.string "Good luck on your adventure!$"
 
 MauvilleCity_GameCorner_Text_ExchangeCoinsForPrizes: @ 82105D7
 	.string "Welcome.\p"
-	.string "You can exchange your COINS for\n"
+	.string "You can exchange your Coins for\n"
 	.string "prizes here.$"
 
 MauvilleCity_GameCorner_Text_WhichPrize: @ 821060D
@@ -716,7 +716,7 @@ MauvilleCity_GameCorner_Text_SendToYourHomePC: @ 8210646
 	.string "We'll send it to your PC at home.$"
 
 MauvilleCity_GameCorner_Text_NotEnoughCoins: @ 8210673
-	.string "You don't have enough COINS.$"
+	.string "You don't have enough Coins.$"
 
 @ Unused
 MauvilleCity_GameCorner_Text_NoRoomForPlacingDecor: @ 8210690
@@ -725,7 +725,7 @@ MauvilleCity_GameCorner_Text_NoRoomForPlacingDecor: @ 8210690
 
 MauvilleCity_GameCorner_Text_OhIsThatSo: @ 82106BF
 	.string "Oh, is that so? \n"
-	.string "You need to save some COINS before\l"
+	.string "You need to save some Coins before\l"
 	.string "coming back here.$"
 
 MauvilleCity_GameCorner_Text_SoYourChoiceIsX: @ 8210705
@@ -740,7 +740,7 @@ MauvilleCity_GameCorner_Text_CantCarryAnyMore: @ 8210728
 
 MauvilleCity_GameCorner_Text_GotTwoOfSameDollWantOne: @ 8210750
 	.string "I made a mistake and got two of\n"
-	.string "the same DOLLS.\p"
+	.string "the same Dolls.\p"
 	.string "Would you like one of them?$"
 
 MauvilleCity_GameCorner_Text_HereYouGo2: @ 821079C
@@ -760,24 +760,24 @@ MauvilleCity_GameCorner_Text_CantWinJackpot: @ 82107FB
 
 MauvilleCity_GameCorner_Text_NeedCoinCaseGoNextDoor: @ 8210830
 	.string "Hey, kid, if you want to play here,\n"
-	.string "you need a COIN CASE.\p"
+	.string "you need a Coin Case.\p"
 	.string "I think the young lady next door\n"
 	.string "had one. Go see her!$"
 
 MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins: @ 82108A0
 	.string "My luck can only last so long.\n"
 	.string "This is too much for me.\l"
-	.string "Here, take some COINS!$"
+	.string "Here, take some Coins!$"
 
 MauvilleCity_GameCorner_Text_MauvilleSomethingForEveryone: @ 82108EF
-	.string "MAUVILLE has something for\n"
+	.string "Mauville has something for\n"
 	.string "everyone.\p"
-	.string "For me, it's the GAME CORNER.$"
+	.string "For me, it's the Game Corner.$"
 
 MauvilleCity_GameCorner_Text_RouletteTablesDifferentRates: @ 8210932
-	.string "The ROULETTE tables have different\n"
+	.string "The Roulette tables have different\n"
 	.string "rates.\p"
-	.string "Check your COINS if you're going to\n"
+	.string "Check your Coins if you're going to\n"
 	.string "pick a table.$"
 
 MauvilleCity_GameCorner_Text_EasyToLoseTrackOfTime: @ 821098E
@@ -785,37 +785,37 @@ MauvilleCity_GameCorner_Text_EasyToLoseTrackOfTime: @ 821098E
 	.string "I should get back to work.$"
 
 MauvilleCity_GameCorner_Text_CoinsAreNeededToPlay: @ 82109D3
-	.string "COINS are needed to play here\n"
-	.string "in the GAME CORNER.$"
+	.string "Coins are needed to play here\n"
+	.string "in the Game Corner.$"
 
 MauvilleCity_GameCorner_Text_RouletteOnlyLuck: @ 8210A05
-	.string "This ROULETTE thing…\n"
+	.string "This Roulette thing…\n"
 	.string "It's rather demanding.\p"
 	.string "Win or lose, it's only by luck.$"
 
 MauvilleCity_GameCorner_Text_UpTo3CoinsCanBeUsed: @ 8210A51
-	.string "Up to three COINS can be used to play\n"
-	.string "the SLOTS.$"
+	.string "Up to three Coins can be used to play\n"
+	.string "the Slots.$"
 
 MauvilleCity_GameCorner_Text_DifficultToStopOn7: @ 8210A82
 	.string "It's very difficult to make it stop\n"
 	.string "right on “7.”\p"
-	.string "If it stops on “7” during the REEL TIME\n"
-	.string "bonus game, you'll receive extra COINS.$"
+	.string "If it stops on “7” during the Reel Time\n"
+	.string "bonus game, you'll receive extra Coins.$"
 
 MauvilleCity_GameCorner_Text_HeresSomeSlotsInfo: @ 8210B04
 	.string "Here's some information for you\n"
-	.string "about the SLOTS.\p"
+	.string "about the Slots.\p"
 	.string "The more lightning bolts you stock,\n"
-	.string "the more REEL TIME chances you get.\p"
+	.string "the more Reel Time chances you get.\p"
 	.string "In a game with the maximum five\n"
-	.string "REEL TIME chances…\p"
+	.string "Reel Time chances…\p"
 	.string "It is possible to receive four regular\n"
 	.string "bonuses, then a big bonus.\p"
-	.string "That would total 660 COINS, but it's\n"
+	.string "That would total 660 Coins, but it's\n"
 	.string "very difficult to get.$"
 
 MauvilleCity_GameCorner_Text_CantPlayWithNoCoinCase: @ 8210C2E
 	.string "You can't play if you don't have\n"
-	.string "a COIN CASE.$"
+	.string "a Coin Case.$"
 

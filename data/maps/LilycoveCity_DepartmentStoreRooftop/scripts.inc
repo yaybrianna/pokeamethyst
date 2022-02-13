@@ -76,7 +76,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_VendingMachine:: @ 8220295
 	end
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink:: @ 82202A6
-	multichoice 16, 0, MULTI_VENDING_MACHINE, 0
+	multichoice 16, 0, MULTI_VENDING_MACHINE, FALSE
 	copyvar VAR_TEMP_1, VAR_RESULT
 	switch VAR_TEMP_1
 	case 0, LilycoveCity_DepartmentStoreRooftop_EventScript_FreshWater
@@ -145,7 +145,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink:: @ 822032F
 	call_if_eq LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyLemonade
 	updatemoneybox 0, 0
 	bufferitemname 0, VAR_TEMP_0
-	playse SE_JIHANKI
+	playse SE_VEND
 	msgbox LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown, MSGBOX_DEFAULT
 	additem VAR_TEMP_0
 	bufferitemname 1, VAR_TEMP_0
@@ -157,7 +157,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink:: @ 822032F
 	checkitemspace VAR_TEMP_0, 1
 	compare VAR_RESULT, FALSE
 	goto_if_eq LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink
-	playse SE_JIHANKI
+	playse SE_VEND
 	msgbox LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown, MSGBOX_DEFAULT
 	additem VAR_TEMP_0
 	bufferitemname 1, VAR_TEMP_0
@@ -169,7 +169,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink:: @ 822032F
 	checkitemspace VAR_TEMP_0, 1
 	compare VAR_RESULT, 0
 	goto_if_eq LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink
-	playse SE_JIHANKI
+	playse SE_VEND
 	msgbox LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown, MSGBOX_DEFAULT
 	additem VAR_TEMP_0
 	bufferitemname 1, VAR_TEMP_0
@@ -215,7 +215,7 @@ LilycoveCity_DepartmentStoreRooftop_Text_BoneDryThirsty: @ 8220552
 	.string "Ohh… I'm bone-dry thirsty!$"
 
 LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike: @ 822056D
-	.string "It's a VENDING MACHINE.\n"
+	.string "It's a Vending Machine.\n"
 	.string "Which drink would you like?$"
 
 LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown: @ 82205A1

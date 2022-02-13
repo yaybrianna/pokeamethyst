@@ -219,8 +219,8 @@ const u8 gText_MatchCallDragonTamer_Nicolas_Intro1[] = _("I'll become legendary 
 const u8 gText_MatchCallDragonTamer_Nicolas_Intro2[] = _("strongest one day!");
 
 const u8 gText_MatchCallBirdKeeper_Robert_Strategy[] = _("I'll show you my technique!");
-const u8 gText_MatchCallBirdKeeper_Robert_Pokemon[] = _("Elegantly wheeling birds.");
-const u8 gText_MatchCallBirdKeeper_Robert_Intro1[] = _("My bird Pokémon, deliver my");
+const u8 gText_MatchCallBirdKeeper_Robert_Pokemon[] = _("Elegantly wheeling Birds.");
+const u8 gText_MatchCallBirdKeeper_Robert_Intro1[] = _("My Bird Pokémon, deliver my");
 const u8 gText_MatchCallBirdKeeper_Robert_Intro2[] = _("love to that girl!");
 
 const u8 gText_MatchCallNinjaBoy_Lao_Strategy[] = _("You'll suffer from poison!");
@@ -325,7 +325,7 @@ const u8 gText_MatchCallPkmnTrainer_Wally_Intro2[] = _("stronger together.");
 
 const u8 gText_MatchCallRockinWhiz_Roxanne_Strategy[] = _("Rock-type power attack.");
 const u8 gText_MatchCallRockinWhiz_Roxanne_Pokemon[] = _("I prefer rock-hard Pokémon.");
-const u8 gText_MatchCallRockinWhiz_Roxanne_Intro1[] = _("A leader of a big Gym bears");
+const u8 gText_MatchCallRockinWhiz_Roxanne_Intro1[] = _("A Leader of a big Gym bears");
 const u8 gText_MatchCallRockinWhiz_Roxanne_Intro2[] = _("a lot of responsibility.");
 
 const u8 gText_MatchCallTheBigHit_Brawly_Strategy[] = _("Direct physical action!");
@@ -371,7 +371,7 @@ const u8 gText_MatchCallEliteFour_Sidney_Intro2[] = _("I'm one of the Elite Four
 const u8 gText_MatchCallEliteFour_Phoebe_Strategy[] = _("Confuse and confound.");
 const u8 gText_MatchCallEliteFour_Phoebe_Pokemon[] = _("There's nothing definite.");
 const u8 gText_MatchCallEliteFour_Phoebe_Intro1[] = _("I wonder how my grandma at");
-const u8 gText_MatchCallEliteFour_Phoebe_Intro2[] = _("Mount. Pyre is doing?");
+const u8 gText_MatchCallEliteFour_Phoebe_Intro2[] = _("Mt. Pyre is doing?");
 
 const u8 gText_MatchCallEliteFour_Glacia_Strategy[] = _("I use items for help.");
 const u8 gText_MatchCallEliteFour_Glacia_Pokemon[] = _("Flaming passion in icy cold!");

@@ -46,7 +46,7 @@ MtChimney_CableCarStation_EventScript_RideCableCar:: @ 822AC6C
 	applymovement LOCALID_ATTENDANT, MtChimney_CableCarStation_Movement_LeadPlayerToCableCar
 	applymovement OBJ_EVENT_ID_PLAYER, MtChimney_CableCarStation_Movement_BoardCableCar
 	waitmovement 0
-	setvar VAR_0x8004, 1
+	setvar VAR_0x8004, TRUE  @ Going down
 	setvar VAR_CABLE_CAR_STATION_STATE, 2
 	incrementgamestat GAME_STAT_RODE_CABLE_CAR
 	special CableCarWarp
@@ -89,7 +89,7 @@ MtChimney_CableCarStation_Movement_ExitCableCar: @ 822ACB4
 	step_end
 
 MtChimney_CableCarStation_Text_CableCarReadyGetOn: @ 822ACB9
-	.string "The CABLE CAR is ready to go down.\n"
+	.string "The Cable Car is ready to go down.\n"
 	.string "Would you like to be on it?$"
 
 MtChimney_CableCarStation_Text_StepThisWay: @ 822ACF8

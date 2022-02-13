@@ -2,7 +2,7 @@ const u8 gGiftRibbonDescriptionPart1_2003RegionalTourney[] = _("2003 Regional To
 const u8 gGiftRibbonDescriptionPart2_Champion[] = _("Champion Ribbon");
 const u8 gGiftRibbonDescriptionPart1_2003NationalTourney[] = _("2003 National Tourney");
 const u8 gGiftRibbonDescriptionPart1_2003GlobalCup[] = _("2003 Global Cup");
-const u8 gGiftRibbonDescriptionPart2_RunnerUp[] = _("Runner-Up Ribbon");
+const u8 gGiftRibbonDescriptionPart2_RunnerUp[] = _("Runner-up Ribbon");
 const u8 gGiftRibbonDescriptionPart2_Semifinalist[] = _("Semifinalist Ribbon");
 const u8 gGiftRibbonDescriptionPart1_2004RegionalTourney[] = _("2004 Regional Tourney");
 const u8 gGiftRibbonDescriptionPart1_2004NationalTourney[] = _("2004 National Tourney");
@@ -20,9 +20,9 @@ const u8 gGiftRibbonDescriptionPart1_PokemonEvent[] = _("Pokémon Event");
 const u8 gGiftRibbonDescriptionPart1_PokemonFestival[] = _("Pokémon Festival");
 const u8 gGiftRibbonDescriptionPart1_DifficultyClearing[] = _("Difficulty-clearing");
 const u8 gGiftRibbonDescriptionPart2_Commemorative[] = _("Commemorative Ribbon");
-const u8 gGiftRibbonDescriptionPart1_ClearingAllChallenges[] = _("Ribbon Awarded For");
+const u8 gGiftRibbonDescriptionPart1_ClearingAllChallenges[] = _("Ribbon awarded for");
 const u8 gGiftRibbonDescriptionPart2_ClearingAllChallenges[] = _("clearing all challenges.");
-const u8 gGiftRibbonDescriptionPart1_100StraightWin[] = _("100-Straight Win");
+const u8 gGiftRibbonDescriptionPart1_100StraightWin[] = _("100-straight Win");
 const u8 gGiftRibbonDescriptionPart1_DarknessTower[] = _("Darkness Tower Clear");
 const u8 gGiftRibbonDescriptionPart1_RedTower[] = _("Red Tower Clear");
 const u8 gGiftRibbonDescriptionPart1_BlackironTower[] = _("Blackiron Tower Clear");
@@ -39,14 +39,14 @@ const u8 gGiftRibbonDescriptionPart1_SpringHolidays[] = _("Spring Holidays Ribbo
 const u8 gGiftRibbonDescriptionPart1_Evergreen[] = _("Evergreen Ribbon");
 const u8 gGiftRibbonDescriptionPart1_SpecialHoliday[] = _("Special Holiday Ribbon");
 const u8 gGiftRibbonDescriptionPart1_HardWorker[] = _("Hard Worker Ribbon");
-const u8 gGiftRibbonDescriptionPart1_LotsOfFriends[] = _("Lots Of Friends Ribbon");
-const u8 gGiftRibbonDescriptionPart1_FullOfEnergy[] = _("Full Of Energy Ribbon");
-const u8 gGiftRibbonDescriptionPart1_LovedPokemon[] = _("A Commemorative Ribbon");
-const u8 gGiftRibbonDescriptionPart2_LovedPokemon[] = _("For a loved Pokémon.");
-const u8 gGiftRibbonDescriptionPart1_LoveForPokemon[] = _("Ribbon that Shows");
-const u8 gGiftRibbonDescriptionPart2_LoveForPokemon[] = _("Love for Pokémon.");
+const u8 gGiftRibbonDescriptionPart1_LotsOfFriends[] = _("Lots of Friends Ribbon");
+const u8 gGiftRibbonDescriptionPart1_FullOfEnergy[] = _("Full of Energy Ribbon");
+const u8 gGiftRibbonDescriptionPart1_LovedPokemon[] = _("A commemorative Ribbon");
+const u8 gGiftRibbonDescriptionPart2_LovedPokemon[] = _("for a loved Pokémon.");
+const u8 gGiftRibbonDescriptionPart1_LoveForPokemon[] = _("Ribbon that shows");
+const u8 gGiftRibbonDescriptionPart2_LoveForPokemon[] = _("love for Pokémon.");
 
-const u8 *const gGiftRibbonDescriptionPointers[][2] = 
+const u8 *const gGiftRibbonDescriptionPointers[MAX_GIFT_RIBBON][2] = 
 {
     {gGiftRibbonDescriptionPart1_2003RegionalTourney,   gGiftRibbonDescriptionPart2_Champion},
     {gGiftRibbonDescriptionPart1_2003NationalTourney,   gGiftRibbonDescriptionPart2_Champion},

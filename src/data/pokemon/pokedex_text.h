@@ -90,9 +90,9 @@ const u8 gKakunaPokedexText[] = _(
 
 const u8 gBeedrillPokedexText[] = _(
     "A Beedrill is extremely territorial.\n"
-    "For safety reasons, no one should ever\n"
-    "approach its nest. If angered, they will\n"
-    "attack in a swarm.");
+    "For safety reasons, no one should \n"
+    "ever approach its nest. If angered,\n"
+    "they will attack in a swarm.");
 
 const u8 gPidgeyPokedexText[] = _(
     "It has an extremely sharp sense of\n"
@@ -293,7 +293,7 @@ const u8 gVenonatPokedexText[] = _(
     "to spot even miniscule prey.");
 
 const u8 gVenomothPokedexText[] = _(
-    "Venomoth are nocturnal--they are only\n"
+    "Venomoth are nocturnal--they only are\n"
     "active at night. Their favorite prey are\n"
     "insects that gather around streetlights,\n"
     "attracted by the light in the darkness.");
@@ -379,7 +379,7 @@ const u8 gPoliwrathPokedexText[] = _(
 const u8 gAbraPokedexText[] = _(
     "A Pokémon that sleeps 18 hours a day.\n"
     "Observation revealed that it uses\n"
-    "Teleport To Change Its Location Once\n"
+    "Teleport to change its location once\n"
     "every hour.");
 
 const u8 gKadabraPokedexText[] = _(
@@ -491,7 +491,7 @@ const u8 gMagnemitePokedexText[] = _(
     "over 300 feet away.");
 
 const u8 gMagnetonPokedexText[] = _(
-    "It Is Actually Three Magnemite Linked\n"
+    "It is actually three Magnemite linked\n"
     "by magnetism. It generates powerful radio\n"
     "waves that raise temperatures by 3.6\n"
     "degrees F within a 3,300-foot radius.");
@@ -515,7 +515,7 @@ const u8 gDodrioPokedexText[] = _(
     "rainfall.");
 
 const u8 gSeelPokedexText[] = _(
-    "Seel Hunt For Prey In Frigid, Ice-Covered\n"
+    "Seel hunt for prey in frigid, ice-covered\n"
     "seas. When it needs to breathe, it punches\n"
     "a hole through the ice with the sharply\n"
     "protruding section of its head.");
@@ -528,14 +528,14 @@ const u8 gDewgongPokedexText[] = _(
 
 const u8 gGrimerPokedexText[] = _(
     "Born from polluted sludge in the sea,\n"
-    "Grimer'S Favorite Food Is Anything Filthy.\n"
+    "Grimer's favorite food is anything filthy.\n"
     "They feed on wastewater pumped out from\n"
     "factories.");
 
 const u8 gMukPokedexText[] = _(
     "It prefers warm and humid habitats.\n"
     "In the summertime, the toxic substances\n"
-    "In Its Body Intensify, Making Muk Reek Like\n"
+    "in its body intensify, making Muk reek like\n"
     "putrid kitchen garbage.");
 
 const u8 gShellderPokedexText[] = _(
@@ -547,17 +547,17 @@ const u8 gShellderPokedexText[] = _(
 const u8 gCloysterPokedexText[] = _(
     "It swims in the sea by swallowing water,\n"
     "then jetting it out toward the rear.\n"
-    "The Cloyster Shoots Spikes From Its\n"
+    "The Cloyster shoots spikes from its\n"
     "shell using the same system.");
 
 const u8 gGastlyPokedexText[] = _(
-    "When Exposed To A Strong Wind, A Gastly'S\n"
+    "When exposed to a strong wind, a Gastly's\n"
     "gaseous body quickly dwindles away.\n"
     "They cluster under the eaves of houses\n"
     "to escape the ravages of wind.");
 
 const u8 gHaunterPokedexText[] = _(
-    "If A Haunter Beckons You While It Is\n"
+    "If a Haunter beckons you while it is\n"
     "floating in darkness, don't approach it.\n"
     "This Pokémon will try to lick you with its\n"
     "tongue and steal your life away.");
@@ -565,29 +565,29 @@ const u8 gHaunterPokedexText[] = _(
 const u8 gGengarPokedexText[] = _(
     "Deep in the night, your shadow cast by\n"
     "a streetlight may suddenly overtake you.\n"
-    "It Is Actually A Gengar Running Past\n"
+    "It is actually a Gengar running past\n"
     "you, pretending to be your shadow.");
 
 const u8 gOnixPokedexText[] = _(
     "There is a magnet in its brain that\n"
-    "Prevents An Onix From Losing Direction\n"
+    "prevents an Onix from losing direction\n"
     "while tunneling. As it grows older, its body\n"
     "becomes steadily rounder and smoother.");
 
 const u8 gDrowzeePokedexText[] = _(
     "If your nose becomes itchy while you are\n"
-    "Sleeping, It'S A Sure Sign That A Drowzee Is\n"
+    "sleeping, it's a sure sign that a Drowzee is\n"
     "standing above your pillow and trying to\n"
     "eat your dream through your nostrils.");
 
 const u8 gHypnoPokedexText[] = _(
     "The arcing movement and glitter of the\n"
-    "Pendulum In A Hypno'S Hand Lull The Foe\n"
+    "pendulum in a Hypno's hand lull the foe\n"
     "into deep hypnosis. While searching for\n"
     "prey, it polishes the pendulum.");
 
 const u8 gKrabbyPokedexText[] = _(
-    "Krabby Live In Holes Dug Into Beaches.\n"
+    "Krabby live in holes dug into beaches.\n"
     "On sandy shores with little in the way\n"
     "of food, they can be seen squabbling with\n"
     "each other over territory.");
@@ -743,7 +743,7 @@ const u8 gScytherPokedexText[] = _(
     "in one wicked stroke.");
 
 const u8 gJynxPokedexText[] = _(
-    "A Jynx Sashays Rhythmically As If It Were\n"
+    "A Jynx sashays rhythmically as if it were\n"
     "dancing. Its motions are so bouncingly\n"
     "alluring, people seeing it are compelled to\n"
     "shake their hips without noticing.");
@@ -852,7 +852,7 @@ const u8 gKabutopsPokedexText[] = _(
 
 const u8 gAerodactylPokedexText[] = _(
     "Aerodactyl is a Pokémon from the age\n"
-    "Of Dinosaurs. It Was Regenerated From Dna\n"
+    "of dinosaurs. It was regenerated from DNA\n"
     "extracted from amber. It is imagined to\n"
     "have been the king of the skies.");
 
@@ -1069,7 +1069,7 @@ const u8 gNatuPokedexText[] = _(
 const u8 gXatuPokedexText[] = _(
     "It has the enigmatic power of foreseeing\n"
     "the future. Some people in different lands\n"
-    "Have Long Believed That Xatu Are\n"
+    "have long believed that Xatu are\n"
     "emissaries from another world.");
 
 const u8 gMareepPokedexText[] = _(
@@ -1714,6 +1714,24 @@ const u8 gPelipperPokedexText[] = _(
     "to scoop up the victim with water.\n"
     "It protects its eggs in its beak.");
 
+const u8 gRaltsPokedexText[] = _(
+    "A Ralts has the power to sense the\n"
+    "emotions of people and Pokémon with the\n"
+    "horns on its head. It takes cover if it\n"
+    "senses any hostility.");
+
+const u8 gKirliaPokedexText[] = _(
+    "A Kirlia has the psychic power to create \n"
+    "a rip in the dimensions and see into the\n"
+    "future. It is said to dance with pleasure\n"
+    "on sunny mornings.");
+
+const u8 gGardevoirPokedexText[] = _(
+    "It apparently does not feel the pull of\n"
+    "gravity because it supports itself with\n"
+    "psychic power. It will give its life to\n"
+    "protect its Trainer.");
+
 const u8 gSurskitPokedexText[] = _(
     "They gather on puddles after evening\n"
     "downpours, gliding across the surface\n"
@@ -1731,6 +1749,89 @@ const u8 gWailmerPokedexText[] = _(
     "it can survive on land, although not too\n"
     "long. It loses vitality if its body becomes\n"
     "dried out.");
+const u8 gShroomishPokedexText[] = _(
+    "It loves to eat damp, composted soil in\n"
+    "forests. If you enter a forest after a\n"
+    "long rain, you can see many Shroomish\n"
+    "feasting on composted soil.");
+
+const u8 gBreloomPokedexText[] = _(
+    "It scatters spores from holes in the cap\n"
+    "on its head. It loves warm and humid\n"
+    "climates. It feeds on trees and plants in\n"
+    "fields and forests.");
+
+const u8 gSlakothPokedexText[] = _(
+    "It sleeps virtually all day and night long.\n"
+    "It doesn't change its nest its entire life,\n"
+    "but it sometimes travels great distances\n"
+    "by swimming in rivers.");
+
+const u8 gVigorothPokedexText[] = _(
+    "It can't keep still because its blood boils\n"
+    "with energy. It runs through the fields\n"
+    "and mountains all day to calm itself. If it\n"
+    "doesn't, it can't sleep at night.");
+
+const u8 gSlakingPokedexText[] = _(
+    "Hordes of Slaking gather around trees\n"
+    "when fruits come into season. They wait\n"
+    "around patiently for ripened fruits to fall\n"
+    "out of the trees.");
+
+const u8 gNincadaPokedexText[] = _(
+    "It makes its nest at the roots of a mighty\n"
+    "tree. Using its whiskerlike antennae, it\n"
+    "probes its surroundings in the\n"
+    "pitch-black darkness of soil.");
+
+const u8 gNinjaskPokedexText[] = _(
+    "Because it darts about vigorously at high\n"
+    "speed, it is very difficult to see. Hearing\n"
+    "its distinctive cries for too long induces\n"
+    "a headache.");
+
+const u8 gShedinjaPokedexText[] = _(
+    "A peculiar Pokémon that floats in air even\n"
+    "though its wings remain completely still.\n"
+    "The inside of its body is hollow and\n"
+    "utterly dark.");
+
+const u8 gWhismurPokedexText[] = _(
+    "Its cries equal a jet plane in volume.\n"
+    "It inhales through its ear canals. Because\n"
+    "of this system, it can cry continually\n"
+    "without having to catch its breath.");
+
+const u8 gLoudredPokedexText[] = _(
+    "It positions the round speakers on its\n"
+    "head to assail foes with ultrasonic waves\n"
+    "at massive volume. It builds power by\n"
+    "stomping the ground.");
+
+const u8 gExploudPokedexText[] = _(
+    "It has sound-generating organs all over\n"
+    "its body. It communicates with others by\n"
+    "adjusting the tone and volume of the cries\n"
+    "it emits.");
+
+const u8 gMakuhitaPokedexText[] = _(
+    "It loves to toughen up its body above all\n"
+    "else. If you hear quaking rumbles in a cave,\n"
+    "it is the sound of Makuhita undertaking\n"
+    "strenuous training.");
+
+const u8 gHariyamaPokedexText[] = _(
+    "It has the habit of challenging others\n"
+    "without hesitation to tests of strength.\n"
+    "It's been known to stand on train tracks\n"
+    "and stop trains using forearm thrusts.");
+
+const u8 gAzurillPokedexText[] = _(
+    "Its tail, which is packed with nutrition,\n"
+    "is very bouncy like a rubber ball. On sunny\n"
+    "days they gather at the edge of water and\n"
+    "splash about for fun.");
 
 const u8 gWailordPokedexText[] = _(
     "It breathes through nostrils that it\n"
@@ -1761,6 +1862,35 @@ const u8 gBaltoyPokedexText[] = _(
     "foot. It has been depicted in murals \n"
     "adorning the walls of a once-bustling city\n"
     "in an ancient age.");
+const u8 gSableyePokedexText[] = _(
+    "It digs branching holes in caves using its\n"
+    "sharp claws in search of food--raw gems.\n"
+    "A SABLEYE lurks in darkness and is seen\n"
+    "only rarely.");
+
+const u8 gMawilePokedexText[] = _(
+    "Its giant jaws are actually steel horns\n"
+    "that transformed. It fools foes into\n"
+    "complacency with its adorable gestures,\n"
+    "then chomps them with its huge jaws.");
+
+const u8 gAronPokedexText[] = _(
+    "A Pokémon that is clad in steel armor.\n"
+    "A new suit of armor is made when it evolves.\n"
+    "The old, discarded armor is salvaged as\n"
+    "metal for making iron products.");
+
+const u8 gLaironPokedexText[] = _(
+    "When two Lairon meet in the wild, they\n"
+    "fight for territory by bashing into each\n"
+    "other with their steel bodies. The sound\n"
+    "of their collision carries for miles.");
+
+const u8 gAggronPokedexText[] = _(
+    "Its iron horns grow longer a little at\n"
+    "a time. They are used to determine the\n"
+    "Aggron's age. The gouges in its armor are\n"
+    "worn with pride as mementos from battles.");
 
 const u8 gClaydolPokedexText[] = _(
     "A Claydol sleeps while hovering in midair.\n"
@@ -1827,6 +1957,53 @@ const u8 gMiloticPokedexText[] = _(
     "large lakes. Considered to be the most\n"
     "beautiful of all Pokémon, it has been\n"
     "depicted in paintings and statues.");
+const u8 gManectricPokedexText[] = _(
+    "Because lightning falls in their vicinities,\n"
+    "Manectric were thought to have been born\n"
+    "from lightning. In battle, they create\n"
+    "thunderclouds.");
+
+const u8 gPluslePokedexText[] = _(
+    "It has the trait of cheering on its fellow\n"
+    "Pokémon. By shorting out the electricity\n"
+    "it releases from its paws, it creates\n"
+    "pom-poms for cheering.");
+
+const u8 gMinunPokedexText[] = _(
+    "At a meeting of Pokémon academics, it was\n"
+    "announced that simultaneous exposure to\n"
+    "electricity from a Plusle and Minun will\n"
+    "promote circulation and boost vitality.");
+
+const u8 gVolbeatPokedexText[] = _(
+    "With their taillights lit, Volbeat fly in\n"
+    "a swarm, drawing geometric designs in the\n"
+    "night sky. They move their nests if their\n"
+    "pond water becomes dirty.");
+
+const u8 gIllumisePokedexText[] = _(
+    "A nocturnal Pokémon that becomes active\n"
+    "upon nightfall. It leads a Volbeat swarm\n"
+    "to draw patterns in the night sky. Over 200\n"
+    "different patterns have been confirmed.");
+
+const u8 gRoseliaPokedexText[] = _(
+    "A Roselia that drinks nutritionally rich\n"
+    "springwater blooms with lovely flowers.\n"
+    "The fragrance of its flowers has the\n"
+    "effect of making its foes careless.");
+
+const u8 gGulpinPokedexText[] = _(
+    "This Pokémon's stomach fluid can even\n"
+    "digest scrap iron. In one gulp, it can\n"
+    "swallow something that is as large as\n"
+    "itself.");
+
+const u8 gSwalotPokedexText[] = _(
+    "Its powerful stomach acid is capable of\n"
+    "digesting almost anything. The one thing\n"
+    "in the whole world a Swalot can't digest is\n"
+    "its own stomach.");
 
 const u8 gCarvanhaPokedexText[] = _(
     "Carvanha attack ships in swarms, making\n"
@@ -1839,6 +2016,54 @@ const u8 gSharpedoPokedexText[] = _(
     "Its skin is specially textured to minimize\n"
     "drag in water. Its speed tops out at over\n"
     "75 miles per hour.");
+
+const u8 gWailmerPokedexText[] = _(
+    "While this Pokémon usually lives in the sea,\n"
+    "it can survive on land, although not too\n"
+    "long. It loses vitality if its body becomes\n"
+    "dried out.");
+
+const u8 gWailordPokedexText[] = _(
+    "It breathes through nostrils that it\n"
+    "raises above the sea. By inhaling to its\n"
+    "maximum capacity, a Wailord can dive close\n"
+    "to 10,000 feet beneath the waves.");
+
+const u8 gNumelPokedexText[] = _(
+    "A Numel stores boiling magma in the hump\n"
+    "on its back. It is a hardy Pokémon that can\n"
+    "transport a 220-pound load. It has served\n"
+    "humans at work since long ago.");
+
+const u8 gCameruptPokedexText[] = _(
+    "A Pokémon that lives in the crater of\n"
+    "a volcano. Every 10 years, the volcanoes\n"
+    "on its back erupt violently. Research is\n"
+    "under way on the cause of eruption.");
+
+const u8 gTorkoalPokedexText[] = _(
+    "It battles using energy it gets from\n"
+    "burning coal. When loosing smoke from its\n"
+    "nostrils, it lets off a sound that is\n"
+    "similar to a locomotive's horn.");
+
+const u8 gSpoinkPokedexText[] = _(
+    "A Pokémon that manipulates psychic power\n"
+    "at will. It doesn't stop bouncing even when\n"
+    "it is asleep. It loves eating mushrooms\n"
+    "that grow underground.");
+
+const u8 gGrumpigPokedexText[] = _(
+    "It stores power in the black pearls on its\n"
+    "forehead. When it uses psychic power, it\n"
+    "performs an odd dance step. Its style of\n"
+    "dancing became hugely popular overseas.");
+
+const u8 gSpindaPokedexText[] = _(
+    "It is distinguished by a pattern of\n"
+    "spots that is always different. Its\n"
+    "unsteady, tottering walk has the\n"
+    "effect of fouling its foe's aim.");
 
 const u8 gTrapinchPokedexText[] = _(
     "Its big jaws crunch through boulders.\n"
@@ -1935,6 +2160,29 @@ const u8 gGlaliePokedexText[] = _(
     "freeze moisture in the atmosphere.\n"
     "A dazzling cloud of diamondlike ice\n"
     "crystals forms around its body.");
+const u8 gSwabluPokedexText[] = _(
+    "A Pokémon that has wings like cottony\n"
+    "clouds. After enduring winter, in which\n"
+    "little food is available, Swablu flocks\n"
+    "move closer to towns in the spring.");
+
+const u8 gAltariaPokedexText[] = _(
+    "It hums in a beautiful soprano voice.\n"
+    "It flies among white clouds in the blue\n"
+    "sky. It launches intensely hot fireballs\n"
+    "from its mouth.");
+
+const u8 gZangoosePokedexText[] = _(
+    "When it battles, it stands on its hind legs\n"
+    "and attacks with its sharply clawed\n"
+    "forelegs. Its fur bristles if it encounters\n"
+    "any Seviper.");
+
+const u8 gSeviperPokedexText[] = _(
+    "Seviper and Zangoose are eternal rivals.\n"
+    "It counters a Zangoose's dazzling agility\n"
+    "with its swordlike tail, which also oozes\n"
+    "a horrible poison.");
 
 const u8 gLunatonePokedexText[] = _(
     "It becomes very active on the night of\n"
@@ -1959,6 +2207,53 @@ const u8 gSpoinkPokedexText[] = _(
     "at will. It doesn't stop bouncing even when\n"
     "it is asleep. It loves eating mushrooms\n"
     "that grow underground.");
+const u8 gBarboachPokedexText[] = _(
+    "Its body is covered with a slimy film.\n"
+    "The film acts as a barrier to prevent germs\n"
+    "in muddy water from entering the\n"
+    "Barboach's body.");
+
+const u8 gWhiscashPokedexText[] = _(
+    "Mysteriously, it can foretell earthquakes.\n"
+    "In the daytime, it sleeps in mud at the\n"
+    "bottom of a pond. When it awakens, it\n"
+    "continually feeds throughout the night.");
+
+const u8 gCorphishPokedexText[] = _(
+    "Once it grips prey with its large pincers,\n"
+    "it will never let go, no matter what.\n"
+    "It is a hardy Pokémon that can thrive\n"
+    "in any environment.");
+
+const u8 gCrawdauntPokedexText[] = _(
+    "A brutish Pokémon that loves to battle.\n"
+    "A veteran Crawdaunt that has prevailed in\n"
+    "hundreds of battles has giant pincers\n"
+    "marked with countless scars.");
+
+const u8 gBaltoyPokedexText[] = _(
+    "A Baltoy moves by spinning on its single\n"
+    "foot. It has been depicted in murals \n"
+    "adorning the walls of a once-bustling city\n"
+    "in an ancient age.");
+
+const u8 gClaydolPokedexText[] = _(
+    "A Claydol sleeps while hovering in midair.\n"
+    "Its arms are separate from its body.\n"
+    "They are kept floating by the Pokémon's\n"
+    "manipulation of psychic power.");
+
+const u8 gLileepPokedexText[] = _(
+    "It disguises itself as seaweed by making\n"
+    "its tentacles sway. Unsuspecting prey\n"
+    "that come too close are swallowed whole.\n"
+    "It became extinct 100 million years ago.");
+
+const u8 gCradilyPokedexText[] = _(
+    "It drags its heavy body along the\n"
+    "seafloor. It makes its nest in the shallows\n"
+    "of warm seas. Cradily can be seen on\n"
+    "beaches when the tide goes out.");
 
 const u8 gGrumpigPokedexText[] = _(
     "It stores power in the black pearls on its\n"
@@ -1983,6 +2278,23 @@ const u8 gMawilePokedexText[] = _(
     "that transformed. It fools foes into\n"
     "complacency with its adorable gestures,\n"
     "then chomps them with its huge jaws.");
+const u8 gArmaldoPokedexText[] = _(
+    "Armaldo usually lives on land. However,\n"
+    "when it hunts for prey, it dives beneath\n"
+    "the ocean. It swims around using its two\n"
+    "large wings.");
+
+const u8 gFeebasPokedexText[] = _(
+    "Feebas live in ponds that are heavily\n"
+    "infested with weeds. Because of its\n"
+    "hopelessly shabby appearance, it\n"
+    "seems as if few Trainers raise it.");
+
+const u8 gMiloticPokedexText[] = _(
+    "It is said to live at the bottom of\n"
+    "large lakes. Considered to be the most\n"
+    "beautiful of all Pokémon, it has been\n"
+    "depicted in paintings and statues.");
 
 const u8 gMedititePokedexText[] = _(
     "It continually meditates for hours every\n"
@@ -2013,6 +2325,23 @@ const u8 gWynautPokedexText[] = _(
     "It cleverly picks fruits using its earlike\n"
     "arms. They gather in fruit gardens, drawn\n"
     "by the fragrance.");
+const u8 gKecleonPokedexText[] = _(
+    "A Pokémon that has the ability to alter its\n"
+    "body colors to match its surroundings.\n"
+    "A Kecleon reverts to its original colors if\n"
+    "it is startled.");
+
+const u8 gShuppetPokedexText[] = _(
+    "This Pokémon roams about deep in the\n"
+    "night seeking such negative emotions as\n"
+    "grudges and envy. It retreats to its nest\n"
+    "when the sun begins to rise.");
+
+const u8 gBanettePokedexText[] = _(
+    "An abandoned plush doll became this\n"
+    "Pokémon. They are said to live in garbage\n"
+    "dumps and wander about in search of the\n"
+    "children that threw them away.");
 
 const u8 gDuskullPokedexText[] = _(
     "A glare from its single scarlet eye makes\n"
@@ -2061,6 +2390,29 @@ const u8 gSwalotPokedexText[] = _(
     "digesting almost anything. The one thing\n"
     "in the whole world a Swalot can't digest is\n"
     "its own stomach.");
+const u8 gAbsolPokedexText[] = _(
+    "It sharply senses even subtle changes in\n"
+    "the sky and the land to predict natural\n"
+    "disasters. It is a long-lived Pokémon that\n"
+    "has a life-span of 100 years.");
+
+const u8 gWynautPokedexText[] = _(
+    "A Wynaut loves to eat sweet fruits.\n"
+    "It cleverly picks fruits using its earlike\n"
+    "arms. They gather in fruit gardens, drawn\n"
+    "by the fragrance.");
+
+const u8 gSnoruntPokedexText[] = _(
+    "They tend to move about in groups of\n"
+    "around five Snorunt. In snowy regions,\n"
+    "it is said that when they are seen late at\n"
+    "night, snowfall will arrive by morning.");
+
+const u8 gGlaliePokedexText[] = _(
+    "A Glalie has the power to instantaneously\n"
+    "freeze moisture in the atmosphere.\n"
+    "A dazzling cloud of diamondlike ice\n"
+    "crystals forms around its body.");
 
 const u8 gTropiusPokedexText[] = _(
     "It flies by flapping its broad leaves.\n"
@@ -2073,6 +2425,11 @@ const u8 gWhismurPokedexText[] = _(
     "It inhales through its ear canals. Because\n"
     "of this system, it can cry continually\n"
     "without having to catch its breath.");
+const u8 gSealeoPokedexText[] = _(
+    "Sealeo live in herds on ice floes. Using its\n"
+    "powerful flippers, it shatters ice.\n"
+    "It dives into the sea to hunt prey five\n"
+    "times a day.");
 
 const u8 gLoudredPokedexText[] = _(
     "It positions the round speakers on its\n"
@@ -2271,6 +2628,18 @@ const u8 gRegisteelPokedexText[] = _(
     "metal. The body metal is composed of a\n"
     "mysterious substance. Not only is it hard,\n"
     "it shrinks and stretches flexibly.");
+
+const u8 gLatiasPokedexText[] = _(
+    "They make a small herd of only several\n"
+    "members. They rarely make contact with\n"
+    "people or other Pokémon. They disappear\n"
+    "if they sense enemies.");
+
+const u8 gLatiosPokedexText[] = _(
+    "Even in hiding, it can detect the locations\n"
+    "of others and sense their emotions since\n"
+    "it has telepathy. Its intelligence allows\n"
+    "it to understand human languages.");
 
 const u8 gKyogrePokedexText[] = _(
     "Kyogre has appeared in mythology as the\n"
