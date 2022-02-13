@@ -23,7 +23,6 @@
 #include "intro.h"
 #include "main.h"
 #include "trainer_hill.h"
-
 static void VBlankIntr(void);
 static void HBlankIntr(void);
 static void VCountIntr(void);
@@ -34,7 +33,7 @@ const u8 gGameVersion = GAME_VERSION;
 
 const u8 gGameLanguage = GAME_LANGUAGE; // English
 
-const char BuildDateTime[] = "2005 02 21 11:10";
+const char BuildDateTime[] = "2022 02 12 11:10";
 
 const IntrFunc gIntrTableTemplate[] =
 {
